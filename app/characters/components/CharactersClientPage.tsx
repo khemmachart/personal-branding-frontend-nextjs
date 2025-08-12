@@ -130,27 +130,55 @@ const CharacterDescription = styled(Body)`
   margin: 0;
 `
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Khemmachart Chutapetch",
+  "alternateName": "Characters and Personality Traits",
+  "description": "Personal character traits and interests that define professional and personal identity",
+  "knowsAbout": characters.map(char => ({
+    "@type": "Thing",
+    "name": char.keyword,
+    "description": char.description,
+    "category": char.category
+  })),
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Product Software Engineer and Consultant"
+  },
+  "interest": characters.map(char => char.category).filter((value, index, self) => self.indexOf(value) === index)
+}
+
 export default function CharactersClientPage() {
   return (
-    <PageLayout>
-      <CharactersContainer>
-        <CharactersHeader>
-          <CharactersTitle>My Characters</CharactersTitle>
-          <CharactersSubtitle>
-            ไม่จริงจังมาก แค่รวมคาแรกเตอร์ที่ชอบใช้ในชีวิตและงาน (Just for fun!)
-          </CharactersSubtitle>
-        </CharactersHeader>
-        <Section spacing="small">
-          <CharactersTable>
-            {characters.map((char) => (
-              <CharacterRow key={char.keyword}>
-                <CharacterKeyword as="div">{char.keyword}</CharacterKeyword>
-                <CharacterDescription>{char.description}</CharacterDescription>
-              </CharacterRow>
-            ))}
-          </CharactersTable>
-        </Section>
-      </CharactersContainer>
-    </PageLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData)
+        }}
+      />
+      
+      <PageLayout>
+        <CharactersContainer>
+          <CharactersHeader>
+            <CharactersTitle>My Characters</CharactersTitle>
+            <CharactersSubtitle>
+              ไม่จริงจังมาก แค่รวมคาแรกเตอร์ที่ชอบใช้ในชีวิตและงาน (Just for fun!)
+            </CharactersSubtitle>
+          </CharactersHeader>
+          <Section spacing="small">
+            <CharactersTable>
+              {characters.map((char) => (
+                <CharacterRow key={char.keyword}>
+                  <CharacterKeyword as="div">{char.keyword}</CharacterKeyword>
+                  <CharacterDescription>{char.description}</CharacterDescription>
+                </CharacterRow>
+              ))}
+            </CharactersTable>
+          </Section>
+        </CharactersContainer>
+      </PageLayout>
+    </>
   )
 }
