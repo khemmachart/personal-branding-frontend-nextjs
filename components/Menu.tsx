@@ -50,11 +50,11 @@ const MenuItem = styled('li')<{ active?: boolean }>`
 
 const menuItems = [
   { paths: ['/'], label: 'Khemmachart' },
-  { paths: [
-      '/profile'
-    ],
-    label: 'Information' },
-  { paths: ['/experiences'], label: 'Experiences' },
+  { paths: ['/profile'], label: 'Profile' },
+  { paths: ['/services'], label: 'Services' },
+  { paths: ['/services-personal'], label: 'Services Personal' },
+  { paths: ['/characters'], label: 'Characters' },
+  { paths: ['/companies'], label: 'Companies' },
 ];
 
 export const Menu = () => {
