@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { colors, spacing, layout, breakpoints, shadows, borderRadius } from './tokens';
+import { colors, spacing, layout, breakpoints, shadows, borderRadius, typography } from './tokens';
 import { Body } from './Typography';
 
 // Container Component
@@ -466,4 +466,4 @@ export const HideOn = styled.div<{ breakpoint: 'mobile' | 'tablet' | 'desktop' }
   }}
 `;
 
-import { typography } from './tokens'; 
+ 

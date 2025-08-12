@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router';
+'use client'
+
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { 
@@ -48,7 +50,12 @@ const MenuItem = styled('li')<{ active?: boolean }>`
   }
 `;
 
-const menuItems = [
+interface MenuItem {
+  paths: string[];
+  label: string;
+}
+
+const menuItems: MenuItem[] = [
   { paths: ['/'], label: 'Khemmachart' },
   { paths: ['/profile'], label: 'Profile' },
   { paths: ['/services'], label: 'Services' },
@@ -58,22 +65,27 @@ const menuItems = [
 ];
 
 export const Menu = () => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <MenuWrapper sticky background>
       <MenuContainer maxWidth="container">
         <MenuList>
-          {menuItems.map((item) => (
-            <MenuItem 
-              key={item.paths[0]} 
-              active={item.paths.some(path => router.pathname === path)}
-            >
-              <Link href={item.paths[0]}>
-                {item.label}
-              </Link>
-            </MenuItem>
-          ))}
+          {menuItems.map((item) => {
+            const href = item.paths[0];
+            if (!href) return null;
+            
+            return (
+              <MenuItem 
+                key={href} 
+                active={item.paths.some(path => pathname === path)}
+              >
+                <Link href={href}>
+                  {item.label}
+                </Link>
+              </MenuItem>
+            );
+          })}
         </MenuList>
       </MenuContainer>
     </MenuWrapper>

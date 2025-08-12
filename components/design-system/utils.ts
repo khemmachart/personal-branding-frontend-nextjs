@@ -186,11 +186,13 @@ export const typographyMixins = {
 /**
  * Export everything for easy access
  */
-export default {
+const utils = {
   cssVars,
   media,
   focusStyles,
   hoverTransition,
   typographyMixins,
   getCSSVar,
-}; 
+};
+
+export default utils; 
