@@ -2,39 +2,39 @@ import { Metadata } from 'next'
 import CharactersClientPage from './components/CharactersClientPage'
 
 export const metadata: Metadata = {
-  title: "My Characters - Khemmachart Chutapetch | Personal Traits & Interests",
-  description: "A collection of character keywords that represent my personality and interests in technology, lifestyle, fitness, photography, fashion, and more. Just for fun exploration of professional and personal identity.",
-  keywords: "Personal Characters, Personality Traits, Technology Interests, Lifestyle, Photography, Fashion, Gaming, Fitness, Professional Identity, Personal Branding",
+  title: "Khemmachart Chutapetch | Developer, Designer & Creator",
+  description: "สวัสดี, ผม Khemmachart - Developer, Designer & Creator ที่มีความหลากหลายในชีวิต. ผ่าน 9 keywords ที่เป็นตัวแทนของผม ตั้งแต่ Bits (Technology) ไปจนถึง Beat (Music) และอีกมากมาย",
+  keywords: "Khemmachart Chutapetch, Developer, Designer, Creator, Personal Brand, Technology, Photography, Fashion, Gaming, Fitness, Thailand Developer, Frontend Developer, Product Engineer",
   authors: [{ name: "Khemmachart Chutapetch" }],
   openGraph: {
     type: 'profile',
     url: "https://khemmachart.dev/characters",
-    title: "My Characters - Khemmachart Chutapetch | Personal Traits & Interests",
-    description: "A collection of character keywords that represent my personality and interests in technology, lifestyle, fitness, photography, fashion, and more. Just for fun exploration of professional and personal identity.",
+    title: "Khemmachart Chutapetch | Developer, Designer & Creator",
+    description: "สวัสดี, ผม Khemmachart - Developer, Designer & Creator ที่มีความหลากหลายในชีวิต. ผ่าน 9 keywords ที่เป็นตัวแทนของผม",
     images: [
       {
-        url: "https://khemmachart.dev/images/characters-hero.jpg",
+        url: "https://khemmachart.dev/images/khemmachart-hero.jpg",
         width: 1200,
         height: 630,
-        alt: 'Personal Character Traits and Interests',
+        alt: 'Khemmachart Chutapetch - Developer, Designer & Creator',
       }
     ],
-    siteName: 'Khemmachart Chutapetch Characters',
-    locale: 'en_US',
+    siteName: 'Khemmachart Chutapetch',
+    locale: 'th_TH',
   },
   twitter: {
     card: 'summary_large_image',
-    title: "My Characters - Khemmachart Chutapetch | Personal Traits & Interests",
-    description: "A collection of character keywords that represent my personality and interests in technology, lifestyle, fitness, photography, fashion, and more. Just for fun exploration of professional and personal identity.",
-    images: ["https://khemmachart.dev/images/characters-hero.jpg"],
+    title: "Khemmachart Chutapetch | Developer, Designer & Creator",
+    description: "สวัสดี, ผม Khemmachart - Developer, Designer & Creator ที่มีความหลากหลายในชีวิต",
+    images: ["https://khemmachart.dev/images/khemmachart-hero.jpg"],
     creator: '@khemmachart',
   },
   alternates: {
     canonical: "https://khemmachart.dev/characters",
   },
   other: {
-    'theme-color': '#1a1a1a',
-    'msapplication-TileColor': '#1a1a1a',
+    'theme-color': '#3B82F6',
+    'msapplication-TileColor': '#3B82F6',
   },
 }
 
