@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/v1/line/messages/push/scheduled-tasks/daily",
+      "schedule": "0 2 * * *"
+    }
+  ]
+}
