@@ -60,7 +60,6 @@ const menuItems: MenuItem[] = [
   { paths: ['/profile'], label: 'Profile' },
   { paths: ['/services'], label: 'Services' },
   { paths: ['/services-personal'], label: 'Services Personal' },
-  { paths: ['/characters'], label: 'Characters' },
   { paths: ['/companies'], label: 'Companies' },
 ];
 
