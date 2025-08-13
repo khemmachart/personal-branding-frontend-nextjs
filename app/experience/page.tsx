@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
-import ResumeClientPage from './components/ResumeClientPage'
-import { resumeData } from '../../components/experiences/data/resumeData'
+import ExperienceClientPage from './components/ExperienceClientPage'
+import { resumeData } from '../../components/experiences/data/experienceData'
 
 export const metadata: Metadata = {
   title: resumeData.seo?.meta_title || 'Resume',
@@ -8,6 +8,6 @@ export const metadata: Metadata = {
   keywords: resumeData.seo?.keywords || ['resume', 'professional', 'experience'],
 }
 
-export default function ResumePage() {
-  return <ResumeClientPage />
+export default function ExperiencePage() {
+  return <ExperienceClientPage />
 }
