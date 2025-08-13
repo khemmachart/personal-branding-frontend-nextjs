@@ -66,9 +66,15 @@ export const Menu = () => {
                 key={href} 
                 $active={isPathActive(item.paths, pathname)}
               >
-                <Link href={href}>
-                  {item.label}
-                </Link>
+                {item.external ? (
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link href={href}>
+                    {item.label}
+                  </Link>
+                )}
               </MenuItem>
             );
           })}

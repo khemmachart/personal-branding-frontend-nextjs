@@ -32,9 +32,10 @@ export const navigationItems: NavigationItem[] = [
   //   description: 'Personal consulting and advisory services'
   // },
   { 
-    paths: ['blog.khemmachart.dev'], 
+    paths: ['https://blog.khemmachart.dev'], 
     label: 'Blog',
-    description: 'Blog and articles'
+    description: 'Blog and articles',
+    external: true
   },
   { 
     paths: ['/contact'], 
