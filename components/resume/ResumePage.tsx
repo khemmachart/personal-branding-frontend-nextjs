@@ -1,6 +1,6 @@
 import React from "react";
 import { Baseline } from "./ui/baseline";
-import { Container, H1, Section, SectionTitle, Item, Org, Role, Summary, Bullets, Meta, Columns } from "./ui/components";
+import { Container, H1, Section, SectionTitle, SectionContent, Item, Org, Role, Summary, Bullets, Meta, Columns, ContactGrid, ContactItem, ContactLabel, ContactValue, HeaderContact } from "./ui/components";
 
 type ItemT = {
   id?: string;
@@ -35,8 +35,14 @@ function formatDate(v?: string) {
   if (!v) return "";
   if (v.toLowerCase?.() === "present") return "Present";
   if (/^\d{4}-\d{2}$/.test(v)) {
-    const [y,m] = v.split("-").map(Number);
-    return new Date(y, m-1, 1).toLocaleString(undefined, { month:"short", year:"numeric" });
+    const parts = v.split("-");
+    if (parts.length >= 2 && parts[0] && parts[1]) {
+      const y = parseInt(parts[0], 10);
+      const m = parseInt(parts[1], 10);
+      if (!isNaN(y) && !isNaN(m)) {
+        return new Date(y, m-1, 1).toLocaleString(undefined, { month:"short", year:"numeric" });
+      }
+    }
   }
   if (/^\d{4}$/.test(v)) return v;
   return v;
@@ -50,11 +56,64 @@ const range = (s?: string, e?: string) => {
   return left || right;
 };
 
+function parseContactInfo(contactList: string[]) {
+  return contactList.map(line => {
+    const text = line.trim();
+    if (text.includes("Email:")) {
+      const email = text.replace("Email:", "").trim();
+      return { label: "Email", value: email, href: `mailto:${email}` };
+    } else if (text.includes("Tel:")) {
+      const tel = text.replace("Tel:", "").trim();
+      return { label: "Phone", value: tel, href: `tel:${tel}` };
+    } else if (text.includes("LinkedIn:")) {
+      const linkedin = text.replace("LinkedIn:", "").trim();
+      return { label: "LinkedIn", value: linkedin, href: `https://${linkedin}` };
+    } else if (text.includes("GitHub:")) {
+      const github = text.replace("GitHub:", "").trim();
+      return { label: "GitHub", value: github, href: `https://${github}` };
+    } else if (text.includes("Blog:")) {
+      const blog = text.replace("Blog:", "").trim();
+      return { label: "Blog", value: blog, href: `https://${blog}` };
+    } else if (text.includes("Portfolio:")) {
+      const portfolio = text.replace("Portfolio:", "").trim();
+      return { label: "Website", value: portfolio, href: `https://${portfolio}` };
+    } else if (text.includes("Location:")) {
+      const location = text.replace("Location:", "").trim();
+      return { label: "Location", value: location };
+    }
+    return { label: "", value: text };
+  }).filter(item => item.label && item.value);
+}
+
+function formatTitle(title?: string) {
+  if (!title) return title;
+  
+  // Handle specific cases
+  const titleMap: Record<string, string> = {
+    'technical_projects': 'Technical Projects',
+    'business_consulting_projects': 'Business Consulting Projects',
+    'professional_experiences': 'Professional Experience',
+    'independent_projects': 'Independent Projects',
+  };
+  
+  if (titleMap[title]) {
+    return titleMap[title];
+  }
+  
+  // General case: convert snake_case to Title Case
+  return title
+    .split('_')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(' ');
+}
+
 function ItemBlock({ it }: { it: ItemT }) {
+  const displayTitle = it.org || formatTitle(it.title) || it.project;
+  
   return (
     <Item>
       <div>
-        <Org>{it.org || it.title || it.project}</Org>
+        <Org>{displayTitle}</Org>
         {it.role && <Role>{it.role}</Role>}
       </div>
       {it.summary && <Summary>{it.summary}</Summary>}
@@ -69,11 +128,15 @@ function ItemBlock({ it }: { it: ItemT }) {
           {it.notes && <div style={{marginTop: 4}}>{it.notes}</div>}
         </Meta>
       )}
-      {Array.isArray(it.children) && it.children.map((sub: ItemT) => (
-        <div key={sub.id || Math.random()} style={{marginLeft: 20, marginTop: 16}}>
-          <ItemBlock it={sub} />
+      {Array.isArray(it.children) && it.children.length > 0 && (
+        <div style={{marginTop: 16, paddingLeft: 24, borderLeft: '2px solid #E5E7EB'}}>
+          {it.children.map((sub: ItemT) => (
+            <div key={sub.id || Math.random()} style={{marginTop: 24}}>
+              <ItemBlock it={sub} />
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </Item>
   );
 }
@@ -88,6 +151,7 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
   const profile = sections?.profile?.events?.[0];
   const contact = sections?.contact?.events?.[0];
   const contactList = Array.isArray(contact?.details) ? contact.details : [];
+  const contactInfo = parseContactInfo(contactList);
 
   return (
     <>
@@ -96,68 +160,76 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
         <header>
           <H1>{profile?.title || "Khemmachart"}</H1>
           {profile?.summary && <Summary>{profile.summary}</Summary>}
-          {contactList.length > 0 && (
-            <Summary style={{marginTop: 16}}>
-              {contactList.map((line: string, i:number) => line.trim())
-                .filter(Boolean)
-                .map((text: string, i:number) => (
-                  <span key={i}>
-                    {i > 0 && " • "}
-                    {text.includes("Email:") ? (
-                      <a href={`mailto:${text.replace("Email:", "").trim()}`}>{text}</a>
-                    ) : text.includes("Tel:") ? (
-                      <a href={`tel:${text.replace("Tel:", "").trim()}`}>{text}</a>
-                    ) : text.includes("LinkedIn:") ? (
-                      <a href={`https://${text.replace("LinkedIn:", "").trim()}`}>{text}</a>
-                    ) : text.includes("GitHub:") ? (
-                      <a href={`https://${text.replace("GitHub:", "").trim()}`}>{text}</a>
-                    ) : text.includes("Blog:") ? (
-                      <a href={`https://${text.replace("Blog:", "").trim()}`}>{text}</a>
-                    ) : text.includes("Portfolio:") ? (
-                      <a href={`https://${text.replace("Portfolio:", "").trim()}`}>{text}</a>
-                    ) : text}
-                  </span>
-                ))
-              }
-            </Summary>
-          )}
         </header>
+
+        {contactInfo.length > 0 && (
+          <Section id="contact">
+            <SectionTitle>Contact</SectionTitle>
+            <SectionContent>
+              <ContactGrid>
+                {contactInfo.map((item, i) => (
+                  <ContactItem key={i}>
+                    <ContactLabel>{item.label}</ContactLabel>
+                    <ContactValue>
+                      {item.href ? (
+                        <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                          {item.value}
+                        </a>
+                      ) : (
+                        item.value
+                      )}
+                    </ContactValue>
+                  </ContactItem>
+                ))}
+              </ContactGrid>
+            </SectionContent>
+          </Section>
+        )}
 
         {sections?.professional_experiences?.events?.length ? (
           <Section id="experience">
             <SectionTitle>Experience</SectionTitle>
-            {sections.professional_experiences.events.map((it: ItemT) => (
-              <ItemBlock key={it.id} it={it} />
-            ))}
-          </Section>
-        ) : null}
-
-        {sections?.education?.events?.length ? (
-          <Section id="education">
-            <SectionTitle>Education</SectionTitle>
-            {sections.education.events.map((it: ItemT) => (
-              <ItemBlock key={it.id} it={it} />
-            ))}
-          </Section>
-        ) : null}
-
-        {sections?.independent_projects?.events?.length ? (
-          <Section id="independent-projects">
-            <SectionTitle>Independent Projects</SectionTitle>
-            {sections.independent_projects.events.map((it: ItemT) => (
-              <ItemBlock key={it.id} it={it} />
-            ))}
+            <SectionContent>
+              {sections.professional_experiences.events.map((it: ItemT) => (
+                <ItemBlock key={it.id} it={it} />
+              ))}
+            </SectionContent>
           </Section>
         ) : null}
 
         {sections?.entrepreneurship?.events?.length ? (
           <Section id="entrepreneurship">
             <SectionTitle>Entrepreneurship</SectionTitle>
-            {sections.entrepreneurship.events.map((it: ItemT) => (
-              <ItemBlock key={it.id} it={it} />
-            ))}
+            <SectionContent>
+              {sections.entrepreneurship.events.map((it: ItemT) => (
+                <ItemBlock key={it.id} it={it} />
+              ))}
+            </SectionContent>
           </Section>
         ) : null}
+
+        {sections?.independent_projects?.events?.length ? (
+          <Section id="independent-projects">
+            <SectionTitle>Independent Projects</SectionTitle>
+            <SectionContent>
+              {sections.independent_projects.events.map((it: ItemT) => (
+                <ItemBlock key={it.id} it={it} />
+              ))}
+            </SectionContent>
+          </Section>
+        ) : null}
+
+        {sections?.education?.events?.length ? (
+          <Section id="education">
+            <SectionTitle>Education</SectionTitle>
+            <SectionContent>
+              {sections.education.events.map((it: ItemT) => (
+                <ItemBlock key={it.id} it={it} />
+              ))}
+            </SectionContent>
+          </Section>
+        ) : null}
+
       </Container>
     </>
   );

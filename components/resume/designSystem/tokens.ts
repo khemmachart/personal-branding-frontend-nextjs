@@ -20,7 +20,7 @@ export const typography = {
 export const space = { xs: 6, sm: 10, md: 16, lg: 24, xl: 32, xxl: 48 };
 
 export const layout = {
-  contentMax: 800,         // px
+  contentMax: 1024,         // px
   tablet: 1024,
   mobile: 768,
 };

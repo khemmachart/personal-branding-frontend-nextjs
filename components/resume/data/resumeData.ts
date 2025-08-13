@@ -284,12 +284,14 @@ export const resumeData = {
         {
           "id": "edu-kmutt-bsc",
           "org": "King Mongkut's University of Technology Thonburi (KMUTT)",
-          "role": "B.Sc. Computer Science (School of Information Technology, English Program)",
+          "role": "B.Sc. Computer Science",
+          "summary": "School of Information Technology, English Program",
           "location": "Bangkok, Thailand",
           "start": "2012",
           "end": "2016",
-          "summary": "First‑Class Honors (Gold Medal), GPAX 3.62; completed 4‑year program in 3.5 years.",
           "details": [
+            "First‑Class Honors (Gold Medal), GPAX 3.62",
+            "Completed 4‑year program in 3.5 years.",
             "Representative of Department's Post‑Training Program (2016)",
             "Outstanding Academic Performance Student Scholarship (every semester, 2012–2016)"
           ],

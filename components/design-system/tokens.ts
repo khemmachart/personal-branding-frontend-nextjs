@@ -10,7 +10,8 @@ export const colors = {
   mutedSage: '#EAE8E1',     // Optional background blocks
 
   // Text Colors
-  graphite: '#4A4A4A',      // Secondary Text
+  pinkSwan: '#C1B8B8',      // Nobel, secondary text
+  graphite: '#6A6A6A',      // Secondary Text
   slateGray: '#3A3A3A',     // Icons, low-priority text
   darkGray: '#333333',      // Primary Text
   black: '#000000',         // Pure Black

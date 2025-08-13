@@ -375,14 +375,12 @@ export default function CharactersClientPage() {
         {/* Hero Section */}
         <HeroSection>
           <HeroContent>
-            <HeroTagline>Personal Brand Identity</HeroTagline>
+            <HeroTagline>Software Engineer - Product Builder - Consultant - Founder</HeroTagline>
             <HeroTitle>
-              สวัสดี, ผม Khemmachart
+              Hi, I’m Khemmachart
             </HeroTitle>
             <HeroSubtitle>
-              คลิกแล้วได้ผม Developer, Designer & Creator ที่มีความหลากหลายในชีวิต
-              <br />
-              แต่ละ keyword คือตัวตนจริง ๆ ของผม
+            I design, build, and launch software products that create meaningful impact at scale - combining technology, design, and strategy to drive positive change, and solve problems that truly matter.
             </HeroSubtitle>
           </HeroContent>
         </HeroSection>
@@ -390,9 +388,9 @@ export default function CharactersClientPage() {
         {/* Keywords Section */}
         <KeywordsSection>
           <LandingContainer>
-            <SectionTitle>ผมคือใคร?</SectionTitle>
+            <SectionTitle>Who I am?</SectionTitle>
             <SectionSubtitle>
-              9 คำที่เล่าเรื่องราวของผม - ทั้งในด้านเทคโนโลยี ไลฟ์สไตล์ และความชอบส่วนตัว
+              9 keywords that represent me - from technology, lifestyle, and personal interests
             </SectionSubtitle>
             
             <KeywordsGrid>
@@ -423,13 +421,12 @@ export default function CharactersClientPage() {
         {/* CTA Section */}
         <CTASection>
           <LandingContainer>
-            <CTATitle>มาคุยกันเพิ่มเติม</CTATitle>
+            <CTATitle>Let's talk</CTATitle>
             <CTADescription>
-              หากคุณสนใจงานของผม หรือต้องการความช่วยเหลือในโปรเจค
-              ยินดีให้คำปรึกษาและร่วมงานด้วย
+              If you're interested in my work or need help with a project, I'd love to chat and collaborate.
             </CTADescription>
             <CTAButton href="mailto:hello@khemmachart.dev">
-              📧 ติดต่อผม
+              📧 Contact me
             </CTAButton>
           </LandingContainer>
         </CTASection>
