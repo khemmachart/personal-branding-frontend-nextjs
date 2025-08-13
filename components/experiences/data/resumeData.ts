@@ -23,7 +23,7 @@ export const resumeData = {
         {
           "id": "exp-deloitte-senior-consultant",
           "org": "Deloitte",
-          "role": "Senior Consultant, Technical Lead",
+          "role": "Senior Consultant, Technical Project Manager",
           "location": "Bangkok, Thailand",
           "start": "2025-02",
           "end": "present",
@@ -38,7 +38,7 @@ export const resumeData = {
         {
           "id": "exp-appsynth-eng-lead",
           "org": "Appsynth",
-          "role": "Engineering Lead",
+          "role": "Engineering Manager",
           "location": "Bangkok, Thailand",
           "start": "2023-06",
           "end": "2025-02",
@@ -161,6 +161,35 @@ export const resumeData = {
       "title": "independent_projects",
       "events": [
         {
+          "id": "indp-business",
+          "title": "business_consulting_projects",
+          "summary": "Advisory on operations, growth, and tech enablement.",
+          "children": [
+            {
+              "id": "bp-restaurant",
+              "project": "AV-Izakaya",
+              "role": "Consultant",
+              "location": "Bangkok, Thailand",
+              "start": "2025",
+              "end": "2025",
+              "summary": "Cost reduction, sales growth, and tech‑enabled pricing optimization.",
+              "details": ["Identify pricing improvement areas with technology", "Explain turnover rate and workforce efficiency"],
+              "tags": ["consulting", "restaurant", "operations"]
+            },
+            {
+              "id": "bp-healthcare",
+              "project": "Healthcare at Home",
+              "role": "Consultant",
+              "location": "Bangkok, Thailand",
+              "start": "2022",
+              "end": "2022",
+              "summary": "New revenue design incl. Healthcare at Home with ops and tech plans.",
+              "details": ["Outline operational models", "Plan technology integration and rollout"],
+              "tags": ["consulting", "healthcare", "services"]
+            }
+          ]
+        },
+        {
           "id": "indp-technical",
           "title": "technical_projects",
           "summary": "Contract and part‑time technical delivery across iOS and media apps.",
@@ -217,27 +246,6 @@ export const resumeData = {
               "tags": ["streaming", "media", "ios"]
             }
           ]
-        },
-        {
-          "id": "indp-business",
-          "title": "business_consulting_projects",
-          "summary": "Advisory on operations, growth, and tech enablement.",
-          "children": [
-            {
-              "id": "bp-restaurant",
-              "project": "Restaurant Consulting",
-              "summary": "Cost reduction, sales growth, and tech‑enabled pricing optimization.",
-              "details": ["Identify pricing improvement areas with technology", "Explain turnover rate and workforce efficiency"],
-              "tags": ["consulting", "restaurant", "operations"]
-            },
-            {
-              "id": "bp-healthcare",
-              "project": "Healthcare Consulting",
-              "summary": "New revenue design incl. Healthcare at Home with ops and tech plans.",
-              "details": ["Outline operational models", "Plan technology integration and rollout"],
-              "tags": ["consulting", "healthcare", "services"]
-            }
-          ]
         }
       ]
     },
@@ -247,7 +255,7 @@ export const resumeData = {
         {
           "id": "ent-isara",
           "org": "Isara Pool Villa",
-          "role": "Founder & Product Owner",
+          "role": "Co-Founder, Product Software Engineer",
           "location": "Bangkok, Thailand",
           "start": "2020",
           "end": "present",
@@ -263,7 +271,7 @@ export const resumeData = {
         {
           "id": "ent-refr-ai",
           "org": "Refr.ai",
-          "role": "Co‑Founder & Product Owner",
+          "role": "Founder, Product Software Engineer",
           "location": "Bangkok, Thailand",
           "start": "2024",
           "end": "present",
@@ -296,6 +304,36 @@ export const resumeData = {
             "Outstanding Academic Performance Student Scholarship (every semester, 2012–2016)"
           ],
           "tags": ["education", "honors", "computer-science"]
+        },
+        {
+          "id": "edu-panya-society",
+          "org": "POSN",
+          "role": "Promoting Science and Mathematics Olympiad in National Level – Computer",
+          "summary": "Identify and select students with exceptional computer skills, develop knowledge and skills in analytical thinking, algorithmic problem-solving, and programming, and prepare Thailand's representatives for the International Olympiad.",
+          "location": "Online",
+          "start": "2025-02-24",
+          "end": "2025-02-24",
+          "details": [
+            "Basic and advanced programming (mostly in C/C++)",
+            "Data structures such as arrays, linked lists, trees, and graphs",
+            "Algorithms such as sorting, searching, dynamic programming, and graph algorithms",
+            "Logical thinking and problem-solving"
+          ],
+          "tags": ["education", "computer-olympiad", "training"]
+        },
+        {
+          "id": "edu-suwitt-rangsit",
+          "org": "Suankularb Wittayalai Rangsit",
+          "role": "High School Diploma, Science-Math Program",
+          "summary": "Completed high school education with a focus on science and mathematics.",
+          "location": "Rangsit, Thailand",
+          "start": "2008",
+          "end": "2012",
+          "details": [
+            "Completed high school with a strong foundation in science and mathematics.",
+            "Developed problem-solving skills through various math and science competitions."
+          ],
+          "tags": ["high-school", "science-math"]
         }
       ]
     },

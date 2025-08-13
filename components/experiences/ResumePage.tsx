@@ -199,7 +199,7 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
 
         {sections?.entrepreneurship?.events?.length ? (
           <Section id="entrepreneurship">
-            <SectionTitle>Entrepreneurship</SectionTitle>
+            <SectionTitle>Entrepreneurship (Own Products)</SectionTitle>
             <SectionContent>
               {sections.entrepreneurship.events.map((it: ItemT) => (
                 <ItemBlock key={it.id} it={it} />
@@ -210,7 +210,7 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
 
         {sections?.independent_projects?.events?.length ? (
           <Section id="independent-projects">
-            <SectionTitle>Independent Projects</SectionTitle>
+            <SectionTitle>Independent Projects (Part-time, Freelance)</SectionTitle>
             <SectionContent>
               {sections.independent_projects.events.map((it: ItemT) => (
                 <ItemBlock key={it.id} it={it} />
