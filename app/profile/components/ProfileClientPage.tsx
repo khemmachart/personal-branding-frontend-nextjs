@@ -40,7 +40,7 @@ const seoData = {
 }
 
 // Custom styled components for the resume
-const ResumeContainer = styled(Container)`
+const ExperienceContainer = styled(Container)`
   max-width: 900px;
   margin: 0 auto;
   padding: ${spacing.xl} ${spacing.lg};
@@ -100,7 +100,7 @@ const ContactItem = styled.div`
   }
 `
 
-const ResumeSection = styled(Section)`
+const ExperienceSection = styled(Section)`
   padding: ${spacing.xl} 0;
   
   &:not(:last-child) {
@@ -306,7 +306,7 @@ export default function ProfileClientPage() {
       />
       
       <PageLayout>
-        <ResumeContainer>
+        <ExperienceContainer>
           <ProfileHeader>
             <ProfileName>Khemmachart Chutapetch</ProfileName>
             <ProfileTitle>Product Software Engineer and Consultant</ProfileTitle>
@@ -332,7 +332,7 @@ export default function ProfileClientPage() {
             </ContactInfo>
           </ProfileHeader>
 
-          <ResumeSection>
+          <ExperienceSection>
             <SectionTitle>Professional Experience</SectionTitle>
             
             <ExperienceItem>
@@ -374,9 +374,9 @@ export default function ProfileClientPage() {
                 45% through user research and iterative design processes.
               </Description>
             </ExperienceItem>
-          </ResumeSection>
+          </ExperienceSection>
 
-          <ResumeSection>
+          <ExperienceSection>
             <SectionTitle>Education & Certifications</SectionTitle>
             
             <EducationItem>
@@ -402,9 +402,9 @@ export default function ProfileClientPage() {
               <Degree>Bachelor of Commerce, Information Technology Management</Degree>
               <Duration>2012 - 2016</Duration>
             </EducationItem>
-          </ResumeSection>
+          </ExperienceSection>
 
-          <ResumeSection>
+          <ExperienceSection>
             <SectionTitle>Skills & Expertise</SectionTitle>
             
             <SkillsGrid>
@@ -458,8 +458,8 @@ export default function ProfileClientPage() {
                 </SkillsList>
               </SkillCategory>
             </SkillsGrid>
-          </ResumeSection>
-        </ResumeContainer>
+          </ExperienceSection>
+        </ExperienceContainer>
       </PageLayout>
     </>
   )

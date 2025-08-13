@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import ResumeClientPage from './components/ResumeClientPage'
-import { resumeData } from '../../components/resume/data/resumeData'
+import { resumeData } from '../../components/experiences/data/resumeData'
 
 export const metadata: Metadata = {
   title: resumeData.seo?.meta_title || 'Resume',

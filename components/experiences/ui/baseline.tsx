@@ -1,12 +1,11 @@
 import React from "react";
-import { font } from "../designSystem/tokens";
-import { colors } from "@/components/design-system";
+import { typography, colors } from "@/components/design-system";
 
 export function Baseline() {
   const css = `
     :root { color-scheme: light; }
     html, body, #root { height: 100%; }
-    body { margin:0; background: ${colors.offWhite}; color: ${colors.darkGray}; font-family:${font}; }
+    body { margin:0; background: ${colors.offWhite}; color: ${colors.darkGray}; font-family:${typography.fontFamily.primary}; }
     *, *::before, *::after { box-sizing: border-box; }
     a { color: inherit; text-decoration: none; }
     @media print {

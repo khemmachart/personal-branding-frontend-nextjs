@@ -58,9 +58,10 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   { paths: ['/'], label: 'Khemmachart' },
   { paths: ['/profile'], label: 'Profile' },
+  { paths: ['/experience'], label: 'Experience' },
   { paths: ['/services'], label: 'Services' },
   { paths: ['/services-personal'], label: 'Services Personal' },
-  { paths: ['/companies'], label: 'Companies' },
+  // { paths: ['/companies'], label: 'Companies' },
 ];
 
 export const Menu = () => {
