@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     type: 'profile',
     url: "https://khemmachart.dev",
     title: "Khemmachart Chutapetch | Developer, Designer & Creator",
-    description: "ฟฟ, ผม Khemmachart - Developer, Designer & Creator ที่มีความหลากหลายในชีวิต. ผ่าน 9 keywords ที่เป็นตัวแทนของผม",
+    description: "สวัสดี, ผม Khemmachart - Developer, Designer & Creator ที่มีความหลากหลายในชีวิต. ผ่าน 9 keywords ที่เป็นตัวแทนของผม",
     images: [
       {
         url: "https://khemmachart.dev/images/khemmachart-hero.jpg",
