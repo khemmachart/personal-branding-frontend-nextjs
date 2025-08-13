@@ -197,9 +197,9 @@ const KeywordsGrid = styled.div`
   }
 `
 
-const KeywordCard = styled.div<{ index: number; isHovered: boolean }>`
+const KeywordCard = styled.div<{ $index: number; $isHovered: boolean }>`
   background: ${colors.ivoryWhite};
-  border: 2px solid ${props => props.isHovered ? colors.accentBlue : colors.lightGray};
+  border: 2px solid ${props => props.$isHovered ? colors.accentBlue : colors.lightGray};
   border-radius: ${borderRadius.xl};
   padding: ${spacing.xl};
   cursor: pointer;
@@ -207,7 +207,7 @@ const KeywordCard = styled.div<{ index: number; isHovered: boolean }>`
   position: relative;
   overflow: hidden;
   animation: ${fadeInUp} 0.6s ease-out;
-  animation-delay: ${props => props.index * 0.3}s;
+  animation-delay: ${props => props.$index * 0.3}s;
   animation-fill-mode: both;
   
   &:hover {
@@ -224,7 +224,7 @@ const KeywordCard = styled.div<{ index: number; isHovered: boolean }>`
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, ${colors.accentBlue}, ${colors.graphite});
-    transform: scaleX(${props => props.isHovered ? 1 : 0});
+    transform: scaleX(${props => props.$isHovered ? 1 : 0});
     transition: transform ${transitions.normal};
     transform-origin: left;
   }
@@ -259,7 +259,7 @@ const KeywordDescription = styled(Body)`
   line-height: 1.6;
 `
 
-const FloatingIcon = styled.div`
+const FloatingIcon = styled.div<{ $animationDelay: number }>`
   width: 32px;
   height: 32px;
   background: linear-gradient(135deg, ${colors.accentBlue}, ${colors.graphite});
@@ -271,7 +271,7 @@ const FloatingIcon = styled.div`
   font-weight: ${typography.fontWeight.bold};
   font-size: 14px;
   animation: ${float} 3s ease-in-out infinite;
-  animation-delay: ${Math.random() * 2}s;
+  animation-delay: ${props => props.$animationDelay}s;
 `
 
 // Footer CTA Section
@@ -397,13 +397,13 @@ export default function CharactersClientPage() {
               {characters.map((char, index) => (
                 <KeywordCard
                   key={char.keyword}
-                  index={index}
-                  isHovered={hoveredCard === char.keyword}
+                  $index={index}
+                  $isHovered={hoveredCard === char.keyword}
                   onMouseEnter={() => setHoveredCard(char.keyword)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
                   <KeywordName>
-                    <FloatingIcon>
+                    <FloatingIcon $animationDelay={index * 0.2}>
                       {char.keyword.charAt(0)}
                     </FloatingIcon>
                     {char.keyword}

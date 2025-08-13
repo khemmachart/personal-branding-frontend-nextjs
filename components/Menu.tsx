@@ -12,6 +12,7 @@ import {
   transitions,
   breakpoints 
 } from './design-system';
+import { navigationItems, isPathActive } from '@/config/navigation';
 
 // Remove sticky positioning from MenuWrapper since Header component will handle it
 const MenuWrapper = styled(Header)`
@@ -30,17 +31,14 @@ const MenuList = styled.ul`
   display: flex;
   gap: ${spacing.lg};
   justify-content: center;
-
-  @media (min-width: ${breakpoints.tablet}) {
-    justify-content: flex-start;
-  }
+  width: 100%;
 `;
 
-const MenuItem = styled('li')<{ active?: boolean }>`
+const MenuItem = styled('li')<{ $active?: boolean }>`
   a {
-    color: ${props => props.active ? colors.darkGray : colors.graphite};
+    color: ${props => props.$active ? colors.darkGray : colors.graphite};
     text-decoration: none;
-    font-weight: ${props => props.active ? typography.fontWeight.semiBold : typography.fontWeight.regular};
+    font-weight: ${props => props.$active ? typography.fontWeight.semiBold : typography.fontWeight.regular};
     font-size: ${typography.fontSize.body};
     transition: color ${transitions.normal};
     
@@ -50,35 +48,23 @@ const MenuItem = styled('li')<{ active?: boolean }>`
   }
 `;
 
-interface MenuItem {
-  paths: string[];
-  label: string;
-}
-
-const menuItems: MenuItem[] = [
-  { paths: ['/'], label: 'Khemmachart' },
-  { paths: ['/profile'], label: 'Profile' },
-  { paths: ['/experience'], label: 'Experience' },
-  { paths: ['/services'], label: 'Services' },
-  { paths: ['/services-personal'], label: 'Services Personal' },
-  // { paths: ['/companies'], label: 'Companies' },
-];
+// Menu items are now imported from centralized navigation config
 
 export const Menu = () => {
   const pathname = usePathname();
 
   return (
-    <MenuWrapper sticky background>
-      <MenuContainer maxWidth="container">
+    <MenuWrapper $sticky $background>
+      <MenuContainer $maxWidth="container">
         <MenuList>
-          {menuItems.map((item) => {
+          {navigationItems.map((item) => {
             const href = item.paths[0];
             if (!href) return null;
             
             return (
               <MenuItem 
                 key={href} 
-                active={item.paths.some(path => pathname === path)}
+                $active={isPathActive(item.paths, pathname)}
               >
                 <Link href={href}>
                   {item.label}

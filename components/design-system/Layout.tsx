@@ -4,15 +4,15 @@ import { Body } from './Typography';
 
 // Container Component
 export const Container = styled.div<{ 
-  maxWidth?: 'article' | 'container' | 'content' | 'none';
-  padding?: boolean;
-  center?: boolean;
+  $maxWidth?: 'article' | 'container' | 'content' | 'none';
+  $padding?: boolean;
+  $center?: boolean;
 }>`
   width: 100%;
   margin: 0 auto;
   
-  ${({ maxWidth = 'container' }) => {
-    switch (maxWidth) {
+  ${({ $maxWidth = 'container' }) => {
+    switch ($maxWidth) {
       case 'article':
         return css`max-width: ${layout.maxWidth.article};`;
       case 'content':
@@ -24,11 +24,11 @@ export const Container = styled.div<{
     }
   }}
   
-  ${({ padding = true }) => padding && css`
+  ${({ $padding = true }) => $padding && css`
     padding: 0 ${spacing.containerPadding};
   `}
   
-  ${({ center = true }) => center && css`
+  ${({ $center = true }) => $center && css`
     margin: 0 auto;
   `}
 `;
@@ -207,20 +207,20 @@ export const Sidebar = styled.aside<{ position?: 'left' | 'right' }>`
 
 // Header Component
 export const Header = styled.header<{ 
-  sticky?: boolean; 
-  background?: boolean; 
-  zIndex?: number;
+  $sticky?: boolean; 
+  $background?: boolean; 
+  $zIndex?: number;
 }>`
   width: 100%;
   border-bottom: 1px solid ${colors.lightGray};
   
-  ${({ sticky, zIndex = 100 }) => sticky && css`
+  ${({ $sticky, $zIndex = 100 }) => $sticky && css`
     position: sticky;
     top: 0;
-    z-index: ${zIndex};
+    z-index: ${$zIndex};
   `}
   
-  ${({ background = true }) => background && css`
+  ${({ $background = true }) => $background && css`
     background-color: ${colors.ivoryWhite};
     backdrop-filter: blur(8px);
   `}
