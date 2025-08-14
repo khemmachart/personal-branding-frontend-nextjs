@@ -11,15 +11,30 @@ export const navigationItems: NavigationItem[] = [
     label: 'Khemmachart',
     description: 'Home page - Personal brand and character overview'
   },
-  { 
-    paths: ['/profile'], 
-    label: 'Profile',
-    description: 'About me and background information'
-  },
+  // { 
+  //   paths: ['/profile'], 
+  //   label: 'Profile',
+  //   description: 'About me and background information'
+  // },
   { 
     paths: ['/experience#contact'], 
-    label: 'Experience',
+    label: 'Contact',
     description: 'Work experience and career timeline'
+  },
+  {
+    paths: ['/experience#experience'], 
+    label: 'Experience',
+    description: 'Education and qualifications'
+  },
+  {
+    paths: ['/experience#entrepreneurship'], 
+    label: 'Entrepreneurship',
+    description: 'Entrepreneurship and business development'
+  },
+  {
+    paths: ['/experience#independent-projects'], 
+    label: 'Independent Projects',
+    description: 'Independent projects and side hustles'
   },
   {
     paths: ['/experience#skills'],
@@ -41,11 +56,6 @@ export const navigationItems: NavigationItem[] = [
     label: 'Blog',
     description: 'Blog and articles',
     external: true
-  },
-  { 
-    paths: ['/contact'], 
-    label: 'Contact',
-    description: 'Contact me'
   },
   // { 
   //   paths: ['/companies'], 
