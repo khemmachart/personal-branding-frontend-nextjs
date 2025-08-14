@@ -8,60 +8,45 @@ export interface NavigationItem {
 export const navigationItems: NavigationItem[] = [
   { 
     paths: ['/'], 
-    label: 'Khemmachart',
-    description: 'Home page - Personal brand and character overview'
+    label: 'Home',
+    description: 'Home page - Personal brand, 9 keywords, and complete profile'
   },
-  // { 
-  //   paths: ['/profile'], 
-  //   label: 'Profile',
-  //   description: 'About me and background information'
-  // },
   { 
-    paths: ['/experience#contact'], 
+    paths: ['/#contact'], 
     label: 'Contact',
-    description: 'Work experience and career timeline'
+    description: 'Contact information and ways to reach out'
   },
   {
-    paths: ['/experience#experience'], 
+    paths: ['/#experience'], 
     label: 'Experience',
-    description: 'Education and qualifications'
+    description: 'Professional work experience and career timeline'
   },
   {
-    paths: ['/experience#entrepreneurship'], 
+    paths: ['/#entrepreneurship'], 
     label: 'Entrepreneurship',
-    description: 'Entrepreneurship and business development'
+    description: 'Own products, business ventures and entrepreneurship'
   },
   {
-    paths: ['/experience#independent-projects'], 
+    paths: ['/#independent-projects'], 
     label: 'Independent Projects',
-    description: 'Independent projects and side hustles'
+    description: 'Part-time projects, freelance work and side hustles'
   },
   {
-    paths: ['/experience#skills'],
-    label: 'Skills',
-    description: 'Skills and competencies'
+    paths: ['/#education'],
+    label: 'Education',
+    description: 'Education background and certifications'
   },
-  // { 
-  //   paths: ['/services'], 
-  //   label: 'Services',
-  //   description: 'Professional services offered'
-  // },
-  // { 
-  //   paths: ['/services-personal'], 
-  //   label: 'Services Personal',
-  //   description: 'Personal consulting and advisory services'
-  // },
+  {
+    paths: ['/#skills'],
+    label: 'Skills',
+    description: 'Technical skills and competencies'
+  },
   { 
     paths: ['https://blog.khemmachart.dev'], 
     label: 'Blog',
     description: 'Blog and articles',
     external: true
   },
-  // { 
-  //   paths: ['/companies'], 
-  //   label: 'Companies',
-  //   description: 'Companies and organizations worked with'
-  // },
 ];
 
 // Helper function to check if a path is active
