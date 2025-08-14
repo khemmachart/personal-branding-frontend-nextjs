@@ -65,7 +65,16 @@ export const navigationItems: NavigationItem[] = [
 ];
 
 // Helper function to check if a path is active
-export const isPathActive = (itemPaths: string[], currentPath: string): boolean => {
+export const isPathActive = (itemPaths: string[], currentPath: string, activeHash?: string): boolean => {
+  // For hash-based navigation, check if the hash matches
+  if (activeHash && itemPaths.some(path => path.includes('#'))) {
+    return itemPaths.some(path => {
+      const [pathOnly, hash] = path.split('#');
+      return currentPath === pathOnly && activeHash === hash;
+    });
+  }
+  
+  // For regular paths, check exact match
   return itemPaths.some(path => currentPath === path);
 };
 

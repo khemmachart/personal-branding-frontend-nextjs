@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import { 
   Header, 
   Container,
@@ -98,6 +99,72 @@ const MenuItem = styled('li')<{ $active?: boolean }>`
 
 export const Menu = () => {
   const pathname = usePathname();
+  const [activeHash, setActiveHash] = useState<string>('');
+
+  useEffect(() => {
+    // Function to update active hash based on scroll position
+    const updateActiveHash = () => {
+      // Get all sections with IDs that match navigation items
+      const sections = navigationItems
+        .filter(item => item.paths[0]?.includes('#'))
+        .map(item => {
+          const path = item.paths[0];
+          if (!path) return null;
+          const hash = path.split('#')[1];
+          if (!hash) return null;
+          return {
+            hash,
+            element: document.getElementById(hash)
+          };
+        })
+        .filter((section): section is NonNullable<typeof section> => section !== null)
+        .filter(section => section.element);
+
+      // Find the section currently in view
+      let currentSection = '';
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      for (const section of sections) {
+        if (section.element) {
+          const rect = section.element.getBoundingClientRect();
+          const elementTop = rect.top + scrollY;
+          const elementHeight = rect.height;
+          
+          // Check if section is in viewport (with some offset for better UX)
+          if (scrollY >= elementTop - windowHeight / 3 && 
+              scrollY < elementTop + elementHeight - windowHeight / 3) {
+            currentSection = section.hash;
+            break;
+          }
+        }
+      }
+      
+      setActiveHash(currentSection);
+    };
+
+    // Set initial active hash from URL
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash.replace('#', '');
+      setActiveHash(hash);
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', updateActiveHash, { passive: true });
+    window.addEventListener('hashchange', () => {
+      const hash = window.location.hash.replace('#', '');
+      setActiveHash(hash);
+    });
+
+    // Call once to set initial state
+    updateActiveHash();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', updateActiveHash);
+      window.removeEventListener('hashchange', updateActiveHash);
+    };
+  }, [pathname]);
 
   return (
     <MenuWrapper $sticky $background data-navbar="true">
@@ -110,7 +177,7 @@ export const Menu = () => {
             return (
               <MenuItem 
                 key={href} 
-                $active={isPathActive(item.paths, pathname)}
+                $active={isPathActive(item.paths, pathname, activeHash)}
               >
                 {item.external ? (
                   <a href={href} target="_blank" rel="noopener noreferrer">
