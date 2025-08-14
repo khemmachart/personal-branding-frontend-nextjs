@@ -1,6 +1,12 @@
 import React from "react";
+import styled from "styled-components";
 import { Baseline } from "./ui/baseline";
 import { Container, H1, Section, SectionTitle, SectionContent, Item, Org, Role, Summary, Bullets, Meta, Columns, ContactGrid, ContactItem, ContactLabel, ContactValue, HeaderContact } from "./ui/components";
+import { PageLayout, colors, spacing, borderRadius, shadows } from '@/components/design-system';
+import HeroSection from './components/HeroSection';
+import KeywordsSection from './components/KeywordsSection';
+import CTASection from './components/CTASection';
+import StructuredDataScript from './components/StructuredDataScript';
 
 type ItemT = {
   id?: string;
@@ -107,6 +113,11 @@ function formatTitle(title?: string) {
     .join(' ');
 }
 
+// Resume specific styled container
+const ResumeContainer = styled(Container)`
+  margin-top: ${spacing.xxxl};
+`;
+
 function ItemBlock({ it }: { it: ItemT }) {
   const displayTitle = it.org || formatTitle(it.title) || it.project;
   
@@ -155,93 +166,106 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
 
   return (
     <>
-      <Baseline />
-      <Container>
-        <header>
-          <H1>{profile?.title || "Khemmachart"}</H1>
-          {profile?.summary && <Summary>{profile.summary}</Summary>}
-        </header>
+      <StructuredDataScript />
+      
+      <PageLayout>
+        {/* Hero Section */}
+        <HeroSection />
 
-        {contactInfo.length > 0 && (
-          <Section id="contact">
-            <SectionTitle>Contact</SectionTitle>
-            <SectionContent>
-              <ContactGrid>
-                {contactInfo.map((item, i) => (
-                  <ContactItem key={i}>
-                    <ContactLabel>{item.label}</ContactLabel>
-                    <ContactValue>
-                      {item.href ? (
-                        <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
-                          {item.value}
-                        </a>
-                      ) : (
-                        item.value
-                      )}
-                    </ContactValue>
-                  </ContactItem>
+        {/* Keywords Section */}
+        <KeywordsSection />
+
+        {/* Resume Section */}
+        <ResumeContainer>
+          <Baseline />
+          <header>
+            <H1>{profile?.title || "Khemmachart"}</H1>
+            {profile?.summary && <Summary>{profile.summary}</Summary>}
+          </header>
+
+          {contactInfo.length > 0 && (
+            <Section id="contact">
+              <SectionTitle>Contact</SectionTitle>
+              <SectionContent>
+                <ContactGrid>
+                  {contactInfo.map((item, i) => (
+                    <ContactItem key={i}>
+                      <ContactLabel>{item.label}</ContactLabel>
+                      <ContactValue>
+                        {item.href ? (
+                          <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                            {item.value}
+                          </a>
+                        ) : (
+                          item.value
+                        )}
+                      </ContactValue>
+                    </ContactItem>
+                  ))}
+                </ContactGrid>
+              </SectionContent>
+            </Section>
+          )}
+
+          {sections?.professional_experiences?.events?.length ? (
+            <Section id="experience">
+              <SectionTitle>Experience</SectionTitle>
+              <SectionContent>
+                {sections.professional_experiences.events.map((it: ItemT) => (
+                  <ItemBlock key={it.id} it={it} />
                 ))}
-              </ContactGrid>
-            </SectionContent>
-          </Section>
-        )}
+              </SectionContent>
+            </Section>
+          ) : null}
 
-        {sections?.professional_experiences?.events?.length ? (
-          <Section id="experience">
-            <SectionTitle>Experience</SectionTitle>
-            <SectionContent>
-              {sections.professional_experiences.events.map((it: ItemT) => (
-                <ItemBlock key={it.id} it={it} />
-              ))}
-            </SectionContent>
-          </Section>
-        ) : null}
+          {sections?.entrepreneurship?.events?.length ? (
+            <Section id="entrepreneurship">
+              <SectionTitle>Entrepreneurship (Own Products)</SectionTitle>
+              <SectionContent>
+                {sections.entrepreneurship.events.map((it: ItemT) => (
+                  <ItemBlock key={it.id} it={it} />
+                ))}
+              </SectionContent>
+            </Section>
+          ) : null}
 
-        {sections?.entrepreneurship?.events?.length ? (
-          <Section id="entrepreneurship">
-            <SectionTitle>Entrepreneurship (Own Products)</SectionTitle>
-            <SectionContent>
-              {sections.entrepreneurship.events.map((it: ItemT) => (
-                <ItemBlock key={it.id} it={it} />
-              ))}
-            </SectionContent>
-          </Section>
-        ) : null}
+          {sections?.independent_projects?.events?.length ? (
+            <Section id="independent-projects">
+              <SectionTitle>Independent Projects (Part-time, Freelance)</SectionTitle>
+              <SectionContent>
+                {sections.independent_projects.events.map((it: ItemT) => (
+                  <ItemBlock key={it.id} it={it} />
+                ))}
+              </SectionContent>
+            </Section>
+          ) : null}
 
-        {sections?.independent_projects?.events?.length ? (
-          <Section id="independent-projects">
-            <SectionTitle>Independent Projects (Part-time, Freelance)</SectionTitle>
-            <SectionContent>
-              {sections.independent_projects.events.map((it: ItemT) => (
-                <ItemBlock key={it.id} it={it} />
-              ))}
-            </SectionContent>
-          </Section>
-        ) : null}
+          {sections?.education?.events?.length ? (
+            <Section id="education">
+              <SectionTitle>Education and Certifications</SectionTitle>
+              <SectionContent>
+                {sections.education.events.map((it: ItemT) => (
+                  <ItemBlock key={it.id} it={it} />
+                ))}
+              </SectionContent>
+            </Section>
+          ) : null}
 
-        {sections?.education?.events?.length ? (
-          <Section id="education">
-            <SectionTitle>Education and Certifications</SectionTitle>
-            <SectionContent>
-              {sections.education.events.map((it: ItemT) => (
-                <ItemBlock key={it.id} it={it} />
-              ))}
-            </SectionContent>
-          </Section>
-        ) : null}
+          {sections?.skills?.events?.length ? (
+            <Section id="skills">
+              <SectionTitle>Skills</SectionTitle>
+              <SectionContent>
+                {sections.skills.events.map((it: ItemT) => (
+                  <ItemBlock key={it.id} it={it} />
+                ))}
+              </SectionContent>
+            </Section>
+          ) : null}
+        </ResumeContainer>
 
-        {sections?.skills?.events?.length ? (
-          <Section id="skills">
-            <SectionTitle>Skills</SectionTitle>
-            <SectionContent>
-              {sections.skills.events.map((it: ItemT) => (
-                <ItemBlock key={it.id} it={it} />
-              ))}
-            </SectionContent>
-          </Section>
-        ) : null}
-
-      </Container>
+        {/* CTA Section */}
+        <CTASection />
+      </PageLayout>
     </>
   );
 }
