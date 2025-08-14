@@ -349,7 +349,7 @@ export const resumeData = {
             "LinkedIn: linkedin.com/in/khemmachart",
             "GitHub: github.com/khemmachart",
             "Blog: medium.com/@khemmachart",
-            "Portfolio: khemmachart.com",
+            "Portfolio: khemmachart.dev",
             "Location: Bangkok, Thailand"
           ],
           "tags": ["contact"]

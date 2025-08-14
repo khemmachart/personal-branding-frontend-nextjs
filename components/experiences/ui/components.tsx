@@ -48,11 +48,18 @@ export const SectionTitle = styled("h2")`
     flex-shrink: 1;
     margin-bottom: ${spacing.sm};
     text-align: left;
+    font-size:${typography.fontSize.h2}; font-weight:${typography.fontWeight.semiBold};
+    letter-spacing:0.04em;
+    color:${colors.darkGray}; text-transform:uppercase; margin:0;
   }
 `;
 
 export const SectionContent = styled("div")`
   flex: 1;
+
+  @media (max-width:768px) {
+    margin: ${spacing.md};
+  }
 `;
 
 export const Item = styled("article")`
@@ -77,7 +84,8 @@ export const Summary = styled("p")`
 `;
 
 export const Bullets = styled("ul")`
-  list-style:disc; padding-left:0.85rem; 
+  list-style:disc; 
+  padding-left:1.25rem; 
   margin: ${spacing.xs} 0 0 0;
   line-height:${typography.lineHeight.body}; font-size:15px;
   
