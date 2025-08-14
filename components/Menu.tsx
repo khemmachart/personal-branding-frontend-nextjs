@@ -125,6 +125,17 @@ export const Menu = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       
+      // Check if we're at the very top of the page (before any section)
+      const firstSection = sections[0];
+      if (firstSection && firstSection.element) {
+        const firstSectionTop = firstSection.element.getBoundingClientRect().top + scrollY;
+        // If we're above the first section (in hero area), no hash should be active
+        if (scrollY < firstSectionTop - windowHeight / 3) {
+          setActiveHash('');
+          return;
+        }
+      }
+      
       for (const section of sections) {
         if (section.element) {
           const rect = section.element.getBoundingClientRect();

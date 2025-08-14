@@ -51,16 +51,33 @@ export const navigationItems: NavigationItem[] = [
 
 // Helper function to check if a path is active
 export const isPathActive = (itemPaths: string[], currentPath: string, activeHash?: string): boolean => {
-  // For hash-based navigation, check if the hash matches
-  if (activeHash && itemPaths.some(path => path.includes('#'))) {
-    return itemPaths.some(path => {
-      const [pathOnly, hash] = path.split('#');
-      return currentPath === pathOnly && activeHash === hash;
-    });
+  // Check if any of the item paths have a hash
+  const hasHashPath = itemPaths.some(path => path.includes('#'));
+  
+  // If there's an active hash
+  if (activeHash) {
+    // For hash-based navigation items, check if the hash matches
+    if (hasHashPath) {
+      return itemPaths.some(path => {
+        const [pathOnly, hash] = path.split('#');
+        return currentPath === pathOnly && activeHash === hash;
+      });
+    }
+    // For non-hash items (like Home), don't highlight when there's an active hash
+    else {
+      return false;
+    }
   }
   
-  // For regular paths, check exact match
-  return itemPaths.some(path => currentPath === path);
+  // If no active hash, only highlight exact path matches (like Home when at top of page)
+  return itemPaths.some(path => {
+    // For hash paths, only match if we're at the base path with no hash
+    if (path.includes('#')) {
+      return false;
+    }
+    // For regular paths, check exact match
+    return currentPath === path;
+  });
 };
 
 // Helper function to get navigation item by path
