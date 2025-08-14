@@ -1,11 +1,11 @@
 'use client'
 
 import React from 'react'
-import ResumePage from '../../../components/experiences/ExperiencePage'
 import { resumeData } from '../../../components/experiences/data/experienceData'
+import ExperiencePage from '../../../components/experiences/ExperiencePage'
 
-const ResumeClientPage = () => {
-  return <ResumePage data={resumeData} />
+const ExperienceClientPage = () => {
+  return <ExperiencePage data={resumeData} />
 }
 
-export default ResumeClientPage
+export default ExperienceClientPage

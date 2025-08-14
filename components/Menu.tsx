@@ -54,7 +54,7 @@ export const Menu = () => {
   const pathname = usePathname();
 
   return (
-    <MenuWrapper $sticky $background>
+    <MenuWrapper $sticky $background data-navbar="true">
       <MenuContainer $maxWidth="container">
         <MenuList>
           {navigationItems.map((item) => {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Providers } from '@/lib/providers'
 import { Menu } from '@/components/Menu'
+import { SmoothScrollHandler } from '@/components/SmoothScrollHandler'
 import '@/styles/globals.css'
 import '@/css/font.css'
 
@@ -89,6 +90,11 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
+          <SmoothScrollHandler 
+            extraOffset={20} 
+            duration={1000}
+            disableDefault={true}
+          />
           <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
             <Menu />
             <main style={{ flex: 1 }}>

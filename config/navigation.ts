@@ -17,9 +17,14 @@ export const navigationItems: NavigationItem[] = [
     description: 'About me and background information'
   },
   { 
-    paths: ['/experience'], 
+    paths: ['/experience#contact'], 
     label: 'Experience',
     description: 'Work experience and career timeline'
+  },
+  {
+    paths: ['/experience#skills'],
+    label: 'Skills',
+    description: 'Skills and competencies'
   },
   // { 
   //   paths: ['/services'], 

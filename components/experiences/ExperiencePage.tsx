@@ -221,9 +221,20 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
 
         {sections?.education?.events?.length ? (
           <Section id="education">
-            <SectionTitle>Education</SectionTitle>
+            <SectionTitle>Education and Certifications</SectionTitle>
             <SectionContent>
               {sections.education.events.map((it: ItemT) => (
+                <ItemBlock key={it.id} it={it} />
+              ))}
+            </SectionContent>
+          </Section>
+        ) : null}
+
+        {sections?.skills?.events?.length ? (
+          <Section id="skills">
+            <SectionTitle>Skills</SectionTitle>
+            <SectionContent>
+              {sections.skills.events.map((it: ItemT) => (
                 <ItemBlock key={it.id} it={it} />
               ))}
             </SectionContent>
