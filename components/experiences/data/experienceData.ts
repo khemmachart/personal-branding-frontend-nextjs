@@ -1,8 +1,8 @@
 export const resumeData = {
-  "version": "1.0",
+  "version": "1.1",
   "seo": {
     "meta_title": "Khemmachart — Tech Leadership, iOS, Product & Consulting",
-    "meta_description": "Engineering leader with 9+ years delivering mobile and digital products, leading cross‑functional teams, and building scalable solutions. Roles across Deloitte, Appsynth, startups, freelance, and founder ventures.",
+    "meta_description": "Engineering leader with 9+ years delivering high-scale mobile and digital products, leading cross-functional teams, and building secure, performant, and user-centric solutions. Proven track record in Deloitte, Appsynth, startups, freelance, and founder roles.",
     "keywords": ["engineering leader", "iOS", "technical lead", "product owner", "consulting", "Bangkok", "freelance", "founder"]
   },
   "groups": [
@@ -12,11 +12,78 @@ export const resumeData = {
         {
           "id": "profile-summary",
           "title": "Professional Summary",
-          "summary": "Engineering leader with 9+ years' experience delivering high‑impact mobile and digital products across startups and enterprises. Proven in cross‑functional leadership, technical strategy, and scalable, user‑focused systems. Skilled in iOS, project leadership, and agile delivery.",
+          "summary": "Engineering leader with 9+ years’ experience delivering mobile and digital products to millions of users across startups and enterprises. Specialized in building high-performance, secure, and scalable systems while leading cross-functional teams to achieve measurable business outcomes. Expert in iOS, technical strategy, and agile delivery, with a proven ability to align technical execution to strategic goals.",
           "tags": ["summary"]
         }
       ]
     },
+    {
+      "title": "skills",
+      "events": [
+        {
+          "id": "skills-software-development",
+          "title": "Software Development",
+          "summary": "Full-stack software engineering with expertise in mobile, backend, frontend, and DevOps, underpinned by strong architecture and scalability practices.",
+          "children": [
+            { "project": "Frontend", "summary": "Next.js, React, HTML5, CSS3, Tailwind CSS" },
+            { "project": "Mobile", "summary": "iOS (Swift, Objective-C), Android (Kotlin), Flutter, Kotlin Multiplatform" },
+            { "project": "Backend", "summary": "Node.js, Python, Java, C#, Express.js" },
+            { "project": "Database", "summary": "PostgreSQL, MySQL, MongoDB, Redis" },
+            { "project": "Architecture", "summary": "Clean Architecture, Modularization, API Design, Microservices" },
+            { "project": "DevOps", "summary": "Docker, Kubernetes, AWS, Firebase, CI/CD (GitHub Actions, Jenkins)" },
+            { "project": "Security & Performance", "summary": "OWASP, App Security Best Practices, Performance Optimization" },
+            { "project": "Tools", "summary": "Git, Jira, Confluence, Notion, Slack, Trello" }
+          ],
+          "tags": ["skills", "technical", "full-stack", "mobile", "backend"]
+        },
+        {
+          "id": "skills-team-management",
+          "title": "Team Management",
+          "summary": "Proven track record in leading engineering teams, setting technical vision, and improving team productivity.",
+          "children": [
+            { "project": "Agile", "summary": "Scrum, Kanban, XP, Agile Coaching" },
+            { "project": "People Management", "summary": "Hiring & Recruitment, Mentoring & Coaching, Performance Review, Career Development" },
+            { "project": "Cross-functional Leadership", "summary": "Facilitating collaboration between engineering, product, and design teams" },
+            { "project": "Conflict Resolution", "summary": "Mediation, Feedback Culture, Change Management" }
+          ],
+          "tags": ["skills", "leadership", "management", "engineering-manager"]
+        },
+        {
+          "id": "skills-project-management",
+          "title": "Project Management",
+          "summary": "Experienced in managing multi-team, multi-vendor projects with focus on delivery quality and stakeholder alignment.",
+          "children": [
+            { "project": "Methodologies", "summary": "Agile, Waterfall, Hybrid" },
+            { "project": "Risk Management", "summary": "Risk Identification, Mitigation Planning, Contingency Management" },
+            { "project": "Stakeholder Management", "summary": "Client Communication, Expectation Management, Executive Reporting" },
+            { "project": "Delivery Management", "summary": "Budget Tracking, Resource Allocation, Scope Control" }
+          ],
+          "tags": ["skills", "project-management", "delivery"]
+        },
+        {
+          "id": "skills-consulting-strategy",
+          "title": "Consulting & Strategy",
+          "summary": "Ability to bridge business goals with technical solutions, ensuring long-term scalability and ROI.",
+          "children": [
+            { "project": "Business Analysis", "summary": "Requirement Gathering, Process Optimization, Workflow Design" },
+            { "project": "Technology Strategy", "summary": "Tech Stack Selection, Scalability Planning, Cloud Migration" },
+            { "project": "Change Management", "summary": "Organizational Transformation, Digital Adoption" }
+          ],
+          "tags": ["skills", "consulting", "strategy"]
+        },
+        {
+          "id": "skills-online-marketing",
+          "title": "Online Marketing",
+          "summary": "Leveraging digital channels to drive growth and user engagement.",
+          "children": [
+            { "project": "Content Marketing", "summary": "SEO, Blog Strategy, Content Planning" },
+            { "project": "Social Media", "summary": "Facebook, Instagram, LinkedIn Campaigns" },
+            { "project": "Analytics", "summary": "Google Search Console, Firebase Analytics, Facebook Analytics, Google Analytics, Conversion Tracking, A/B Testing" }
+          ],
+          "tags": ["skills", "marketing", "growth"]
+        }
+      ]
+    },    
     {
       "title": "professional_experiences",
       "events": [
@@ -27,11 +94,11 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2025-02",
           "end": "present",
-          "summary": "Technical lead on client‑facing engagements; align business needs with scalable solutions.",
+          "summary": "Lead technical direction for client-facing digital transformation projects, aligning business needs with scalable, secure solutions.",
           "details": [
-            "Lead technical delivery and coordinate stakeholders and third‑party vendors.",
-            "Provide architectural guidance; ensure performance, security, and compliance.",
-            "Primary technical point of contact driving alignment between business and engineering."
+            "Contributed to designing and implementing enterprise-grade architectures that helped reduce operational costs by ~40%.",
+            "Coordinated cross-functional stakeholders and vendors to meet project milestones on time and within budget.",
+            "Led the engineering team to improve processes and workflows, enhancing delivery efficiency and collaboration across workstreams."
           ],
           "tags": ["consulting", "architecture", "client-facing"]
         },
@@ -42,28 +109,28 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2023-06",
           "end": "2025-02",
-          "summary": "Led engineering teams; set technical strategy and improved delivery processes.",
+          "summary": "Led multi-team engineering delivery, driving process improvements and technical quality across multiple client portfolios.",
           "details": [
-            "Own architecture/implementation quality across multiple projects.",
-            "Run sprint planning, estimation, and retrospectives from the technical lens.",
-            "Coordinate with clients/vendors; mentor engineers and unblock complex issues."
+            "Acted as client-facing lead, gathering requirements, providing technical consulting, and overseeing the delivery process to ensure alignment and quality outcomes.",
+            "Managed a team of 6–8 engineers, successfully enabling over 40% of team members to achieve promotions during tenure.",
+            "Established engineering ownership standards, on-call process, and postmortem practices to improve operational reliability and knowledge sharing."
           ],
           "tags": ["leadership", "delivery", "process"]
         },
         {
-          "id": "exp-appsynth-tech-pm",
+          "id": "exp-appsynth-tech-lead",
           "org": "Appsynth",
-          "role": "Technical Project Lead",
+          "role": "Technical Lead",
           "location": "Bangkok, Thailand",
           "start": "2021-04",
           "end": "2023-05",
-          "summary": "Managed end‑to‑end delivery for enterprise projects focused on performance, security, and scale.",
+          "summary": "Led technical delivery and architecture for an enterprise eCommerce platform with over 1M monthly active users, ensuring performance, scalability, and security.",
           "details": [
-            "Primary technical contact; align requirements and solutions.",
-            "Lead analysis and system design with clear docs/flows.",
-            "Track progress, mitigate risk, and assure quality across teams."
+            "Owned overall technical process and high-level system design, aligning architecture with business and product requirements.",
+            "Acted as primary technical contact for clients and vendors, gathering and refining requirements, and translating them into scalable technical solutions.",
+            "Coordinated engineering efforts across teams, ensuring alignment on standards, workflows, and delivery timelines.",
           ],
-          "tags": ["project-lead", "system-design", "stakeholders"]
+          "tags": ["technical-lead", "system-design", "architecture", "stakeholders", "ecommerce"]
         },
         {
           "id": "exp-appsynth-ios",
@@ -72,13 +139,13 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2019-10",
           "end": "2021-04",
-          "summary": "Built high‑performance iOS apps with strong UX and stability focus.",
+          "summary": "Developed and maintained high-performance iOS eCommerce application with 1M+ MAU, focusing on UX and stability.",
           "details": [
-            "Establish clean architecture baselines.",
-            "Implement core features incl. VPN integration and business logic.",
-            "Partner with QA; drive grooming and sprint planning readiness."
+            "Coded and maintained core iOS features for a large-scale eCommerce app, improving app load times by 20%.",
+            "Coordinated closely with QA, designers, and product managers to ensure features met design, quality, and business requirements, achieving 100% on-time delivery.",
+            "Proactively identified UI/UX improvements and collaborated/consulted with design team to enhance user experience without impacting delivery schedules."
           ],
-          "tags": ["ios", "clean-architecture", "mobile"]
+          "tags": ["ios", "clean-architecture", "mobile", "ecommerce"]
         },
         {
           "id": "exp-fastwork-assoc-se",
@@ -87,14 +154,14 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2019-04",
           "end": "2019-08",
-          "summary": "Optimized platform features and collaborated with product on delivery.",
+          "summary": "Contributed to cross-platform mobile app features and performance improvements.",
           "details": [
-            "Contribute using Kotlin Multiplatform and Flutter.",
-            "Build Flutter platform channels for native integrations.",
-            "Support grooming and planning for smoother workflows."
+            "Developed presentation layer using Flutter and iOS Native for responsive and user-friendly UI.",
+            "Implemented domain and data layers using Kotlin Multiplatform for shared business logic across platforms.",
+            "Coordinated with cross-functional teams through the Scrum process to ensure smooth delivery and alignment."
           ],
           "tags": ["flutter", "kmp", "cross-platform"]
-        },
+        },        
         {
           "id": "exp-panya-ios",
           "org": "Panya Studios",
@@ -102,13 +169,14 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2018-01",
           "end": "2019-06",
-          "summary": "Developed/maintained live trivia streaming app at scale.",
+          "summary": "Led iOS development and game workflow coordination for Panya Live-Trivia App, a national-scale real-time streaming platform.",
           "details": [
-            "Own core gameplay functions and real‑time features.",
-            "Implement live video, chat, and interactive UI.",
-            "Integrate front‑end with backend services reliably."
+            "Acted as primary engineer overseeing the gameplay workflow, coordinating closely with the Product Owner to ensure seamless live show operations.",
+            "Developed an iOS control application to manage live quiz workflows, including question timing, answer validation, and real-time result display.",
+            "Built and maintained the main Panya iOS application, supporting up to 70K concurrent users with minimal latency during live shows.",
+            "Integrated backend services and optimized client-side performance to ensure smooth user experience under high traffic loads."
           ],
-          "tags": ["live-streaming", "realtime", "ios"]
+          "tags": ["live-streaming", "realtime", "ios", "high-traffic"]
         },
         {
           "id": "exp-santora-hir",
@@ -117,14 +185,13 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2017-03",
           "end": "2019-06",
-          "summary": "Prototyped and launched MVPs for incubation programs.",
+          "summary": "Prototyped and launched MVPs for entertainment-focused products within startup incubation programs.",
           "details": [
-            "Set up project structures; deliver features across concepts.",
-            "Ship MVPs under tight timelines for PoC validation.",
-            "Guide early‑stage teams on technical decisions."
+            "Developed and shipped multiple MVPs for entertainment products, including interactive and media-rich applications.",
+            "Set up iOS project structures and implemented core features from concept to validation stage.",
+            "Collaborated in cross-functional processes including Scrum ceremonies, design sprints, and usability testing to align product vision and technical execution.",
           ],
-          "notes": "Full‑time Mar 2017–Apr 2019; Part‑time May–Jun 2019",
-          "tags": ["startup", "mvp", "prototype"]
+          "tags": ["startup", "mvp", "prototype", "entertainment", "scrum"]
         },
         {
           "id": "exp-nextzy-ios",
@@ -133,28 +200,13 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2016-01",
           "end": "2017-02",
-          "summary": "Enhanced MyAIS app; improved performance and integrations.",
+          "summary": "Rebuilt and optimized MyAIS iOS application for improved performance, user experience, and maintainability.",
           "details": [
-            "Redesign/restructure MyAIS application.",
-            "Migrate API services; reduce app footprint.",
-            "Build video call and chat for BingBing MVP."
+            "Redesigned and restructured the MyAIS application with a new architecture and UI, successfully delivered within 6 months.",
+            "Migrated API services, and optimized assets to reducing application size by 40%"
           ],
-          "tags": ["ios", "telecom", "performance"]
-        },
-        {
-          "id": "exp-noonswoon-intern",
-          "org": "Noonswoon",
-          "role": "Product & Growth Intern",
-          "location": "Bangkok, Thailand",
-          "start": "2015-07",
-          "end": "2015-08",
-          "summary": "Executed growth initiatives to increase acquisition and engagement.",
-          "details": [
-            "Build growth features: DoYouLikeMe?, WhatSizeYouAre?.",
-            "Research and implement matching/UX optimizations."
-          ],
-          "tags": ["growth", "product", "internship"]
-        }
+          "tags": ["ios", "telecom", "performance", "mvp", "optimization"]
+        },        
       ]
     },
     {
@@ -163,7 +215,7 @@ export const resumeData = {
         {
           "id": "indp-business",
           "title": "business_consulting_projects",
-          "summary": "Advisory on operations, growth, and tech enablement.",
+          "summary": "Advisory on operations, growth, and technology adoption for business transformation.",
           "children": [
             {
               "id": "bp-restaurant",
@@ -172,9 +224,12 @@ export const resumeData = {
               "location": "Bangkok, Thailand",
               "start": "2025",
               "end": "2025",
-              "summary": "Cost reduction, sales growth, and tech‑enabled pricing optimization.",
-              "details": ["Identify pricing improvement areas with technology", "Explain turnover rate and workforce efficiency"],
-              "tags": ["consulting", "restaurant", "operations"]
+              "summary": "Consulted on technology adoption and investment strategy for restaurant operations.",
+              "details": [
+                "Advised on integrating technology into restaurant workflows, including POS, delivery platforms, and reservation systems.",
+                "Provided guidance on technology investment decisions such as developing a dedicated application versus leveraging third-party solutions."
+              ],
+              "tags": ["consulting", "restaurant", "technology", "operations"]
             },
             {
               "id": "bp-healthcare",
@@ -183,69 +238,52 @@ export const resumeData = {
               "location": "Bangkok, Thailand",
               "start": "2022",
               "end": "2022",
-              "summary": "New revenue design incl. Healthcare at Home with ops and tech plans.",
-              "details": ["Outline operational models", "Plan technology integration and rollout"],
-              "tags": ["consulting", "healthcare", "services"]
+              "summary": "Consulted on digital transformation and new business model development for hospital services.",
+              "details": [
+                "Advised on expanding hospital services to include at-home patient care by deploying nurses for in-home visits.",
+                "Designed technology integration plans to support scheduling, patient tracking, and secure medical record management."
+              ],
+              "tags": ["consulting", "healthcare", "digital-transformation", "services"]
             }
           ]
         },
         {
-          "id": "indp-technical",
-          "title": "technical_projects",
-          "summary": "Contract and part‑time technical delivery across iOS and media apps.",
+          "id": "indp-freelance",
+          "title": "Freelance & Contract iOS Engineering",
+          "summary": "Delivered part-time and contract projects across iOS, streaming, and VPN/eKYC domains.",
           "children": [
-            {
-              "id": "tp-nelika",
-              "org": "Nelika",
-              "role": "iOS Engineer",
-              "location": "Bangkok, Thailand",
-              "start": "2022",
-              "end": "2022",
-              "summary": "Tailored iOS solutions from design to deployment; provided post‑launch support.",
-              "tags": ["freelance", "ios"]
+            { 
+              "project": "Nelika", 
+              "summary": "Developed a UDID registration application for a major telecommunication provider (MyAIS Native), ensuring secure device identification and smooth integration with existing systems.", 
+              "start": "2023-01", 
+              "end": "2023-02" 
             },
-            {
-              "id": "tp-existingco",
-              "org": "The Existing Company",
-              "role": "iOS Engineer",
-              "location": "Bangkok, Thailand",
-              "start": "2021",
-              "end": "2021",
-              "summary": "Optimized iOS apps to improve user flows and responsiveness.",
-              "tags": ["freelance", "ios"]
+            { 
+              "project": "The Existing Company", 
+              "summary": "Built and optimized a real estate mobile application for Fraser Property, improving property listing performance and enhancing user experience.", 
+              "start": "2022-01", 
+              "end": "2022-02" 
             },
-            {
-              "id": "tp-techcombine",
-              "org": "Tech Combine",
-              "role": "iOS Engineer",
-              "location": "Bangkok, Thailand",
-              "start": "2020",
-              "end": "2020",
-              "summary": "Built VPN and eKYC apps; delivered from setup to release.",
-              "details": ["Init clean structure; implement VPN core", "JavaScript interface for eKYC"],
-              "tags": ["vpn", "ekyc", "ios"]
+            { 
+              "project": "Tech Combine", 
+              "summary": "Developed BullVPN iOS application with secure VPN integration, clean architecture, and optimized connection stability.", 
+              "start": "2021-01", 
+              "end": "2021-02" 
             },
-            {
-              "id": "tp-onelink",
-              "org": "Onelink Technology Company",
-              "role": "iOS Engineer",
-              "location": "Bangkok, Thailand",
-              "start": "2017-08",
-              "end": "2017-10",
-              "summary": "Built 'Check In' employee location app; owned design, implementation, and release.",
-              "tags": ["location", "ios"]
+            { 
+              "project": "Onelink", 
+              "summary": "Created a location-based employee check-in iOS application to track attendance and improve workforce management efficiency.", 
+              "start": "2019-01", 
+              "end": "2019-02" 
             },
-            {
-              "id": "tp-thaicom",
-              "org": "Thaicom Public Company Limited",
-              "role": "iOS Engineer",
-              "location": "Bangkok, Thailand",
-              "start": "2017-06",
-              "end": "2017-08",
-              "summary": "Developed LOOX TV streaming app; enhanced MCOT Kid app.",
-              "tags": ["streaming", "media", "ios"]
-            }
-          ]
+            { 
+              "project": "Thaicom", 
+              "summary": "Developed LOOX TV streaming application and optimized MCOT Kid app performance for smoother playback and better user experience.",
+              "start": "2019-01", 
+              "end": "2019-02" 
+            }            
+          ],
+          "tags": ["freelance", "ios", "mobile"]
         }
       ]
     },
@@ -259,14 +297,14 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2020",
           "end": "present",
-          "summary": "End‑to‑end booking platform from concept to launch with scalable foundations.",
+          "summary": "Built and launched a fully operational pool villa booking platform from the ground up, driving direct bookings and organic growth.",
           "details": [
-            "Define product vision/roadmap; manage full lifecycle.",
-            "Lead engineering, operations, sales, admin alignment.",
-            "Architect web app and LINE push integration; focus on scale/reliability.",
-            "Direct content and SEO for organic growth."
+            "Development, conceived, designed, and developed the entire web platform as a solo engineer, covering frontend, backend coordination, and system architecture.",
+            "Notification, integrated LINE push notifications for real-time booking updates",
+            "For SEO, executed full-scale digital marketing strategy (SEO, content, and campaigns), increasing organic traffic by 150% within 12 months, peaking at 1,600 daily visitors from Google search.",
+            "Operation, managed business operations end-to-end, product development, sales, and administration to meet revenue targets."
           ],
-          "tags": ["founder", "booking-platform", "product"]
+          "tags": ["founder", "booking-platform", "product", "full-stack", "marketing"]
         },
         {
           "id": "ent-refr-ai",
@@ -275,49 +313,75 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2024",
           "end": "present",
-          "summary": "AI‑driven content research, generation, and distribution across channels.",
+          "summary": "Created an AI-driven content creation and distribution platform to help users generate high-quality, audience-specific content at scale.",
           "details": [
-            "Own product vision/roadmap and GTM.",
-            "Design AI workflows to research content per audience.",
-            "Oversee AI generation/refinement of images and videos.",
-            "Manage automated multi‑platform publishing."
+            "Designed, developed, and deployed the platform end-to-end as a solo engineer, integrating AI workflows for idea generation, copywriting, and media creation.",
+            "Researched audience segments and developed tailored content structure templates to maximize relevance and engagement across all target audiences.",
+            "[In-Progress] Automated publishing pipelines across major social media channels, reducing manual posting time by over 90%.",
+            "[In-Progress] Implemented audience-specific research algorithms to tailor content strategy, improving engagement rates for early users by 40%.",
+            "[In-Progress] Executed branding and marketing campaigns to drive initial user acquisition and platform awareness."
           ],
-          "tags": ["ai", "content", "founder"]
+          "tags": ["ai", "content", "founder", "automation", "marketing"]
         }
       ]
-    },
+    },    
     {
       "title": "education",
       "events": [
         {
           "id": "edu-kmutt-bsc",
-          "org": "King Mongkut's University of Technology Thonburi (KMUTT)",
-          "role": "B.Sc. Computer Science",
-          "summary": "School of Information Technology, English Program",
+          "org": "KMUTT",
+          "role": "B.Sc. Computer Science, English Program",
+          "summary": "King Mongkut's University of Technology Thonburi (KMUTT), School of Information Technology (SIT)",
+          "details": [
+            "First-Class Honors (Gold Medal), GPAX 3.62 — Completed 4‑year program in 3.5 years.",
+            "Outstanding Academic Performance Student Scholarship (every semester, 2012–2016)",
+            "Be representative of Department's Post‑Training Program (2016)",
+          ],
           "location": "Bangkok, Thailand",
           "start": "2012",
           "end": "2016",
-          "details": [
-            "First‑Class Honors (Gold Medal), GPAX 3.62",
-            "Completed 4‑year program in 3.5 years.",
-            "Representative of Department's Post‑Training Program (2016)",
-            "Outstanding Academic Performance Student Scholarship (every semester, 2012–2016)"
-          ],
           "tags": ["education", "honors", "computer-science"]
         },
         {
+          "id": "edu-microsoft-msp",
+          "org": "Microsoft",
+          "role": "Microsoft Student Partner",
+          "summary": "Selected as a Microsoft Student Partner for 2015 and attended official training at Microsoft Thailand.",
+          "location": "Bangkok, Thailand",
+          "start": "2015",
+          "end": "2015",
+          "details": [
+            "Promoted Microsoft technologies and engaged with student developer communities.",
+            "Attended hands-on training at Microsoft Thailand headquarters."
+          ],
+          "tags": ["program", "microsoft", "student-partner"]
+        },
+        {
+          "id": "edu-google-gsa",
+          "org": "Google",
+          "role": "Google Student Ambassador",
+          "summary": "Selected as a Google Student Ambassador for 2014 and participated in regional training.",
+          "location": "Indonesia",
+          "start": "2014",
+          "end": "2014",
+          "details": [
+            "Represented KMUTT as a Google Student Ambassador.",
+            "Attended ambassador training in Indonesia to promote Google technologies and programs on campus."
+          ],
+          "tags": ["program", "google", "student-ambassador"]
+        },        
+        {
           "id": "edu-panya-society",
           "org": "POSN",
-          "role": "Promoting Science and Mathematics Olympiad in National Level – Computer",
-          "summary": "Identify and select students with exceptional computer skills, develop knowledge and skills in analytical thinking, algorithmic problem-solving, and programming, and prepare Thailand's representatives for the International Olympiad.",
+          "role": "Promoting Science and Mathematics Olympiad – Computer",
+          "summary": "Participated in Thailand’s national computer olympiad program (POSN) and completed Camp 1.",
           "location": "Online",
           "start": "2025-02-24",
           "end": "2025-02-24",
           "details": [
-            "Basic and advanced programming (mostly in C/C++)",
-            "Data structures such as arrays, linked lists, trees, and graphs",
-            "Algorithms such as sorting, searching, dynamic programming, and graph algorithms",
-            "Logical thinking and problem-solving"
+            "Learned programming in C/C++, data structures, and algorithms.",
+            "Enhanced analytical thinking and problem-solving skills through intensive training."
           ],
           "tags": ["education", "computer-olympiad", "training"]
         },
@@ -330,11 +394,25 @@ export const resumeData = {
           "start": "2008",
           "end": "2012",
           "details": [
-            "Completed high school with a strong foundation in science and mathematics.",
-            "Developed problem-solving skills through various math and science competitions."
+            "Served as President of the Computer Club and member of the Student Association.",
+            "Developed problem-solving skills through math and science competitions."
           ],
-          "tags": ["high-school", "science-math"]
-        }
+          "tags": ["high-school", "science-math", "leadership"]
+        },
+        {
+          "id": "edu-nsc-finalist",
+          "org": "National Software Contest (NSC)",
+          "role": "Finalist – Game Development Category",
+          "summary": "Reached the final round of the National Software Contest (NSC) in the Game Development category.",
+          "location": "Thailand",
+          "start": "2014",
+          "end": "2014",
+          "details": [
+            "Designed and developed an original game project for the NSC competition.",
+            "Presented the game to judges in the final round at the national level."
+          ],
+          "tags": ["competition", "nsc", "game-development"]
+        }        
       ]
     },
     {
@@ -351,8 +429,7 @@ export const resumeData = {
             "Blog: medium.com/@khemmachart",
             "Portfolio: khemmachart.dev",
             "Location: Bangkok, Thailand"
-          ],
-          "tags": ["contact"]
+          ]
         }
       ]
     }
