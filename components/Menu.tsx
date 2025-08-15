@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { 
   Header, 
   Container,
@@ -90,7 +90,8 @@ const MenuItem = styled('li')<{ $active?: boolean }>`
   /* Add responsive font sizing for better mobile experience */
   @media (max-width: ${breakpoints.mobile}) {
     a {
-      font-size: ${typography.fontSize.caption};
+      font-size: ${props => props.$active ? typography.fontSize.body : typography.fontSize.small};
+      transition: font-size ${transitions.normal};
     }
   }
 `;
@@ -100,6 +101,40 @@ const MenuItem = styled('li')<{ $active?: boolean }>`
 export const Menu = () => {
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState<string>('');
+  const menuListRef = useRef<HTMLUListElement>(null);
+
+  // Function to scroll active menu item to center
+  const scrollToActiveItem = () => {
+    if (!menuListRef.current) return;
+
+    const menuList = menuListRef.current;
+    const activeItem = menuList.querySelector('[data-active="true"]') as HTMLElement;
+    
+    if (!activeItem) return;
+
+    const menuListRect = menuList.getBoundingClientRect();
+    const activeItemRect = activeItem.getBoundingClientRect();
+    
+    // Calculate the position to center the active item
+    const menuListCenter = menuListRect.width / 2;
+    const activeItemCenter = activeItemRect.left - menuListRect.left + activeItemRect.width / 2;
+    const scrollDistance = activeItemCenter - menuListCenter;
+    
+    // Scroll to center the active item
+    menuList.scrollBy({
+      left: scrollDistance,
+      behavior: 'smooth'
+    });
+  };
+
+  // Effect to scroll to active item when it changes
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      scrollToActiveItem();
+    }, 100); // Small delay to ensure DOM is updated
+    
+    return () => clearTimeout(timer);
+  }, [pathname, activeHash]);
 
   useEffect(() => {
     // Function to update active hash based on scroll position
@@ -180,15 +215,18 @@ export const Menu = () => {
   return (
     <MenuWrapper $sticky $background data-navbar="true">
       <MenuContainer $maxWidth="container">
-        <MenuList>
+        <MenuList ref={menuListRef}>
           {navigationItems.map((item) => {
             const href = item.paths[0];
             if (!href) return null;
             
+            const isActive = isPathActive(item.paths, pathname, activeHash);
+            
             return (
               <MenuItem 
                 key={href} 
-                $active={isPathActive(item.paths, pathname, activeHash)}
+                $active={isActive}
+                data-active={isActive}
               >
                 {item.external ? (
                   <a href={href} target="_blank" rel="noopener noreferrer">

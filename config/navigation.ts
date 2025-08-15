@@ -33,7 +33,7 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     paths: ['/#education'],
-    label: 'Education',
+    label: 'Education and Certification',
     description: 'Education background and certifications'
   },
   {
