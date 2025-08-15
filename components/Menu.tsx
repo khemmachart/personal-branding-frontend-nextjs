@@ -94,6 +94,12 @@ const MenuItem = styled('li')<{ $active?: boolean }>`
       transition: font-size ${transitions.normal};
     }
   }
+  @media (max-width: ${breakpoints.tablet}) {
+    a {
+      font-size: ${props => props.$active ? typography.fontSize.body : typography.fontSize.caption};
+      transition: font-size ${transitions.normal};
+    }
+  }
 `;
 
 // Menu items are now imported from centralized navigation config
