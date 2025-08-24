@@ -11,7 +11,7 @@ export const resumeData = {
       "events": [
         {
           "id": "profile-summary",
-          "title": "Professional Summary",
+          "title": "Summary",
           "summary": "Engineering leader with 9+ years’ experience delivering mobile and digital products to millions of users across startups and enterprises. Specialized in building high-performance, secure, and scalable systems while leading cross-functional teams to achieve measurable business outcomes. Expert in iOS, technical strategy, and agile delivery, with a proven ability to align technical execution to strategic goals.",
           "tags": ["summary"]
         }
@@ -303,10 +303,11 @@ export const resumeData = {
           },
           "summary": "Built and launched a fully operational pool villa booking platform from the ground up, driving direct bookings and organic growth.",
           "details": [
-            "Development, conceived, designed, and developed the entire web platform as a solo engineer, covering frontend, backend coordination, and system architecture.",
-            "Notification, integrated LINE push notifications for real-time booking updates",
-            "SEO & Growth Marketing: Boosted organic website traffic by 3,200% YoY, peaking at 1,600+ daily visitors from Google Search.",
-            "Operation, managed business operations end-to-end, product development, sales, and administration to meet revenue targets."
+            "Founded and built a full-stack web platform end-to-end, covering frontend, backend, and system architecture to support 200–300 daily active users.",
+            "Integrated LINE push notifications for real-time booking updates, enhancing customer experience.",
+            "Boosted organic traffic by 3,200% YoY, reaching 1,600+ daily visitors from Google Search.",
+            "Achieved 80+ bookings during high season, demonstrating strong product-market fit.",
+            "Led business operations including vision setting, OKRs/KPIs, workflow optimization, and partner acquisition."
           ],
           "detailSections": [
             {
