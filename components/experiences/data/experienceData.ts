@@ -550,13 +550,15 @@ export const resumeData = {
           "id": "contact-primary",
           "summary": "Primary contact and social links.",
           "details": [
-            "Email: nueve.sr@gmail.com",
-            "Tel: (+66) 82 080 2536",
+            "Email: k.chutapetch+works@gmail.com",
             "LinkedIn: linkedin.com/in/khemmachart",
             "GitHub: github.com/khemmachart",
-            "Blog: medium.com/@khemmachart",
+            "Blog: blog.khemmachart.dev",
             "Portfolio: khemmachart.dev",
-            "Location: Bangkok, Thailand"
+            "Location: Bangkok, Thailand",
+            "Facebook: facebook.com/khemmachart",
+            "Instagram: instagram.com/khemmachart",
+            "Twitter: twitter.com/khemmachart"
           ]
         }
       ]

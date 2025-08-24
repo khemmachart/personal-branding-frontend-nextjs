@@ -89,6 +89,15 @@ function parseContactInfo(contactList: string[]) {
     } else if (text.includes("Location:")) {
       const location = text.replace("Location:", "").trim();
       return { label: "Location", value: location };
+    } else if (text.includes("Facebook:")) {
+      const facebook = text.replace("Facebook:", "").trim();
+      return { label: "Facebook", value: facebook, href: `https://${facebook}` };
+    } else if (text.includes("Instagram:")) {
+      const instagram = text.replace("Instagram:", "").trim();
+      return { label: "Instagram", value: instagram, href: `https://${instagram}` };
+    } else if (text.includes("Twitter:")) {
+      const twitter = text.replace("Twitter:", "").trim();
+      return { label: "Twitter", value: twitter, href: `https://${twitter}` };
     }
     return { label: "", value: text };
   }).filter(item => item.label && item.value);
