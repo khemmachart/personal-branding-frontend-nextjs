@@ -7,6 +7,7 @@ import HeroSection from './components/HeroSection';
 import KeywordsSection from './components/KeywordsSection';
 import CTASection from './components/CTASection';
 import StructuredDataScript from './components/StructuredDataScript';
+import Link from 'next/link';
 
 type ItemT = {
   id?: string;
@@ -223,7 +224,14 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
               <SectionTitle>Entrepreneurship (Own Products)</SectionTitle>
               <SectionContent>
                 {sections.entrepreneurship.events.map((it: ItemT) => (
-                  <ItemBlock key={it.id} it={it} />
+                  <div key={it.id}>
+                    <ItemBlock it={it} />
+                    {it.id && (
+                      <div style={{ marginBottom: 48 }}>
+                        <Link href={`/entrepreneurship/${it.id}`}>See more details →</Link>
+                      </div>
+                    )}
+                  </div>
                 ))}
               </SectionContent>
             </Section>
