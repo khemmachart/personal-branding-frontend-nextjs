@@ -46,6 +46,31 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
         <Baseline />
         <header>
           <H1>{(venture as any).org || (venture as any).title || (venture as any).project}</H1>
+          {(venture as any).links && (
+            <div style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+              {(venture as any).links.website && (
+                <a href={(venture as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</a>
+              )}
+              {(venture as any).links.booking && (
+                <a href={(venture as any).links.booking} target="_blank" rel="noopener noreferrer">Booking ↗</a>
+              )}
+              {(venture as any).links.demo && (
+                <a href={(venture as any).links.demo} target="_blank" rel="noopener noreferrer">Demo ↗</a>
+              )}
+              {(venture as any).links.deck && (
+                <a href={(venture as any).links.deck} target="_blank" rel="noopener noreferrer">Deck ↗</a>
+              )}
+              {Array.isArray((venture as any).links.press) && (venture as any).links.press.length > 0 && (
+                <a href={(venture as any).links.press[0]} target="_blank" rel="noopener noreferrer">Press ↗</a>
+              )}
+              {(venture as any).links.instagram && (
+                <a href={(venture as any).links.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+              )}
+              {(venture as any).links.twitter && (
+                <a href={(venture as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</a>
+              )}
+            </div>
+          )}
           <Summary>{(venture as any).summary}</Summary>
           <Meta>{[range((venture as any).start, (venture as any).end), (venture as any).location].filter(Boolean).join(' — ')}</Meta>
         </header>

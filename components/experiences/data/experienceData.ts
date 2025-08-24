@@ -301,6 +301,16 @@ export const resumeData = {
             "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=60",
             "alt": "Pool villa exterior at sunset"
           },
+          "links": {
+            "website": "https://isara.example.com",
+            "booking": "https://isara.example.com/booking",
+            "deck": "https://assets.example.com/isara-deck.pdf",
+            "press": [
+              "https://news.example.com/isara-feature",
+              "https://blog.example.com/isara-growth-story"
+            ],
+            "instagram": "https://instagram.com/isara_poolvilla"
+          },
           "summary": "Built and launched a fully operational pool villa booking platform from the ground up, driving direct bookings and organic growth.",
           "details": [
             "Founded and built a full-stack web platform end-to-end, covering frontend, backend, and system architecture to support 200–300 daily active users.",
@@ -420,6 +430,15 @@ export const resumeData = {
           "image": {
             "src": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=60",
             "alt": "AI concept and product interface"
+          },
+          "links": {
+            "website": "https://refr.example.com",
+            "demo": "https://refr.example.com/demo",
+            "deck": "https://assets.example.com/refr-deck.pdf",
+            "press": [
+              "https://news.example.com/refr-launch"
+            ],
+            "twitter": "https://twitter.com/refr_ai"
           },
           "summary": "Created an AI-driven content creation and distribution platform to help users generate high-quality, audience-specific content at scale.",
           "details": [

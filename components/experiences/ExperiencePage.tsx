@@ -233,6 +233,31 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
                       </div>
                     )}
                     <ItemBlock it={it} />
+                    {(it as any).links && (
+                      <div style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+                        {(it as any).links.website && (
+                          <Link href={(it as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</Link>
+                        )}
+                        {(it as any).links.booking && (
+                          <Link href={(it as any).links.booking} target="_blank" rel="noopener noreferrer">Booking ↗</Link>
+                        )}
+                        {(it as any).links.demo && (
+                          <Link href={(it as any).links.demo} target="_blank" rel="noopener noreferrer">Demo ↗</Link>
+                        )}
+                        {(it as any).links.deck && (
+                          <Link href={(it as any).links.deck} target="_blank" rel="noopener noreferrer">Deck ↗</Link>
+                        )}
+                        {Array.isArray((it as any).links.press) && (it as any).links.press.length > 0 && (
+                          <Link href={(it as any).links.press[0]} target="_blank" rel="noopener noreferrer">Press ↗</Link>
+                        )}
+                        {(it as any).links.instagram && (
+                          <Link href={(it as any).links.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</Link>
+                        )}
+                        {(it as any).links.twitter && (
+                          <Link href={(it as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</Link>
+                        )}
+                      </div>
+                    )}
                     {it.id && (
                       <div style={{ marginBottom: 48 }}>
                         <Link href={`/entrepreneurship/${it.id}`}>See more details →</Link>

@@ -46,6 +46,31 @@ function ItemBlockLite({ it }: { it: ItemT }) {
         {it.role && <Role>{it.role}</Role>}
       </div>
       {it.summary && <Summary>{it.summary}</Summary>}
+      {(it as any).links && (
+        <div style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+          {(it as any).links.website && (
+            <NextLink href={(it as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</NextLink>
+          )}
+          {(it as any).links.booking && (
+            <NextLink href={(it as any).links.booking} target="_blank" rel="noopener noreferrer">Booking ↗</NextLink>
+          )}
+          {(it as any).links.demo && (
+            <NextLink href={(it as any).links.demo} target="_blank" rel="noopener noreferrer">Demo ↗</NextLink>
+          )}
+          {(it as any).links.deck && (
+            <NextLink href={(it as any).links.deck} target="_blank" rel="noopener noreferrer">Deck ↗</NextLink>
+          )}
+          {Array.isArray((it as any).links.press) && (it as any).links.press.length > 0 && (
+            <NextLink href={(it as any).links.press[0]} target="_blank" rel="noopener noreferrer">Press ↗</NextLink>
+          )}
+          {(it as any).links.instagram && (
+            <NextLink href={(it as any).links.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</NextLink>
+          )}
+          {(it as any).links.twitter && (
+            <NextLink href={(it as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</NextLink>
+          )}
+        </div>
+      )}
       {Array.isArray(it.details) && it.details.length > 0 && (
         <Bullets>
           {it.details.slice(0, 5).map((d: string, i: number) => (
