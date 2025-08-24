@@ -9,6 +9,7 @@ import CTASection from './components/CTASection';
 import StructuredDataScript from './components/StructuredDataScript';
 import Link from 'next/link';
 import Image from 'next/image';
+// styled, colors, spacing, borderRadius are already imported above
 
 type ItemT = {
   id?: string;
@@ -234,7 +235,7 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
                     )}
                     <ItemBlock it={it} />
                     {(it as any).links && (
-                      <div style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+                      <LinksSection>
                         {(it as any).links.website && (
                           <Link href={(it as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</Link>
                         )}
@@ -256,12 +257,16 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
                         {(it as any).links.twitter && (
                           <Link href={(it as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</Link>
                         )}
-                      </div>
+                        {(it as any).links.services && (
+                          <Link href={(it as any).links.services} target="_blank" rel="noopener noreferrer">Services ↗</Link>
+                        )}
+                      </LinksSection>
                     )}
+                    
                     {it.id && (
-                      <div style={{ marginBottom: 48 }}>
+                      <LinksSection style={{ marginBottom: 48 }}>
                         <Link href={`/entrepreneurship/${it.id}`}>See more details →</Link>
-                      </div>
+                      </LinksSection>
                     )}
                   </div>
                 ))}
@@ -309,3 +314,14 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
     </>
   );
 }
+
+const LinksSection = styled.div`
+  margin-top: ${spacing.sm};
+  padding: ${spacing.md};
+  border: 1px solid ${colors.lightGray};
+  border-radius: ${borderRadius.lg};
+  background: ${colors.ivoryWhite};
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+`

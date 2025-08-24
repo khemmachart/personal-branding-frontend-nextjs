@@ -47,7 +47,7 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
         <header>
           <H1>{(venture as any).org || (venture as any).title || (venture as any).project}</H1>
           {(venture as any).links && (
-            <div style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+            <LinksSection>
               {(venture as any).links.website && (
                 <a href={(venture as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</a>
               )}
@@ -69,7 +69,7 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
               {(venture as any).links.twitter && (
                 <a href={(venture as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</a>
               )}
-            </div>
+            </LinksSection>
           )}
           <Summary>{(venture as any).summary}</Summary>
           <Meta>{[range((venture as any).start, (venture as any).end), (venture as any).location].filter(Boolean).join(' — ')}</Meta>
@@ -198,6 +198,17 @@ const SubtopicBadge = styled.span`
 const SubtopicTitle = styled.span`
   font-weight: ${typography.fontWeight.semiBold};
   color: ${colors.darkGray};
+`
+
+const LinksSection = styled.div`
+  margin-top: ${spacing.sm};
+  padding: ${spacing.md};
+  border: 1px solid ${colors.lightGray};
+  border-radius: ${borderRadius.lg};
+  background: ${colors.ivoryWhite};
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 `
 
 

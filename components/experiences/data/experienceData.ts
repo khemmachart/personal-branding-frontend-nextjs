@@ -438,7 +438,8 @@ export const resumeData = {
             "press": [
               "https://news.example.com/refr-launch"
             ],
-            "twitter": "https://twitter.com/refr_ai"
+            "twitter": "https://twitter.com/refr_ai",
+            "services": "https://refr.example.com/services"
           },
           "summary": "Created an AI-driven content creation and distribution platform to help users generate high-quality, audience-specific content at scale.",
           "details": [

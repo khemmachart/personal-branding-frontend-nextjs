@@ -6,6 +6,8 @@ import { Baseline } from './ui/baseline'
 import { Container, H1, Section, SectionTitle, SectionContent, Item, Org, Role, Summary, Bullets, Meta } from './ui/components'
 import NextLink from 'next/link'
 import Image from 'next/image'
+import styled from 'styled-components'
+import { colors, spacing, borderRadius } from '@/components/design-system'
 
 type ItemT = {
   id?: string;
@@ -47,7 +49,7 @@ function ItemBlockLite({ it }: { it: ItemT }) {
       </div>
       {it.summary && <Summary>{it.summary}</Summary>}
       {(it as any).links && (
-        <div style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+        <LinksSection>
           {(it as any).links.website && (
             <NextLink href={(it as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</NextLink>
           )}
@@ -69,7 +71,7 @@ function ItemBlockLite({ it }: { it: ItemT }) {
           {(it as any).links.twitter && (
             <NextLink href={(it as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</NextLink>
           )}
-        </div>
+        </LinksSection>
       )}
       {Array.isArray(it.details) && it.details.length > 0 && (
         <Bullets>
@@ -115,5 +117,16 @@ export default function EntrepreneurshipPage() {
     </PageLayout>
   )
 }
+
+const LinksSection = styled.div`
+  margin-top: ${spacing.sm};
+  padding: ${spacing.md};
+  border: 1px solid ${colors.lightGray};
+  border-radius: ${borderRadius.lg};
+  background: ${colors.ivoryWhite};
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+`
 
 
