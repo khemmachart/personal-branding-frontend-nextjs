@@ -301,7 +301,7 @@ export const resumeData = {
           "details": [
             "Development, conceived, designed, and developed the entire web platform as a solo engineer, covering frontend, backend coordination, and system architecture.",
             "Notification, integrated LINE push notifications for real-time booking updates",
-            "For SEO, executed full-scale digital marketing strategy (SEO, content, and campaigns), increasing organic traffic by 150% within 12 months, peaking at 1,600 daily visitors from Google search.",
+            "SEO & Growth Marketing: Boosted organic website traffic by 3,200% YoY, peaking at 1,600+ daily visitors from Google Search.",
             "Operation, managed business operations end-to-end, product development, sales, and administration to meet revenue targets."
           ],
           "tags": ["founder", "booking-platform", "product", "full-stack", "marketing"]
