@@ -19,7 +19,11 @@ import {
   FaTshirt, 
   FaHeart, 
   FaGamepad, 
-  FaMusic 
+  FaMusic,
+  FaSeedling,
+  FaRing,
+  FaLeaf,
+  FaPaw,
 } from 'react-icons/fa'
 
 // Characters data with icons
@@ -64,7 +68,7 @@ const characters = [
     keyword: 'Bunny',
     category: 'สัตว์เลี้ยง',
     description: 'ด้านน่ารัก, ความอ่อนโยน, ความละมุน',
-    icon: FaHeart,
+    icon: FaPaw,
   },
   {
     keyword: 'Battle',
@@ -72,11 +76,17 @@ const characters = [
     description: 'การต่อสู้, ความท้าทาย, การแข่งขัน',
     icon: FaGamepad,
   },
+  // {
+  //   keyword: 'Beat',
+  //   category: 'ดนตรี',
+  //   description: 'จังหวะ, vibe, การเคลื่อนไหว, ความรู้สึกดนตรี',
+  //   icon: FaMusic,
+  // },
   {
-    keyword: 'Beat',
-    category: 'ดนตรี',
-    description: 'จังหวะ, vibe, การเคลื่อนไหว, ความรู้สึกดนตรี',
-    icon: FaMusic,
+    keyword: 'Bloom',
+    category: 'การเติบโต',
+    description: 'การเบ่งบาน, การพัฒนา, ความงาม',
+    icon: FaHeart,
   },
 ]
 
@@ -149,9 +159,21 @@ const KeywordsGrid = styled.div`
 `
 
 const IconContainer = styled.div<{ $index: number }>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${spacing.xs};
   animation: ${fadeInUp} 0.6s ease-out;
   animation-delay: ${props => props.$index * 0.1}s;
   animation-fill-mode: both;
+`
+
+const IconLabel = styled.div`
+  font-size: ${typography.fontSize.caption};
+  color: ${colors.graphite};
+  font-weight: ${typography.fontWeight.medium};
+  text-align: center;
+  opacity: 0.7;
 `
 
 const FloatingIcon = styled.div<{ $animationDelay: number }>`
@@ -175,7 +197,7 @@ const KeywordsSection = () => {
       <LandingContainer>
         <KeywordsSectionTitle>Who I am?</KeywordsSectionTitle>
         <KeywordsSectionSubtitle>
-          9 keywords that represent me - from technology, lifestyle, and personal interests
+          {characters.length} keywords that represent me - from technology, lifestyle, and personal interests
         </KeywordsSectionSubtitle>
         
         <KeywordsGrid>
@@ -186,6 +208,7 @@ const KeywordsSection = () => {
                 <FloatingIcon $animationDelay={index * 0.2}>
                   <IconComponent size={20} />
                 </FloatingIcon>
+                <IconLabel>{char.keyword}</IconLabel>
               </IconContainer>
             )
           })}

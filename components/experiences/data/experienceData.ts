@@ -21,29 +21,13 @@ export const resumeData = {
       "title": "skills",
       "events": [
         {
-          "id": "skills-software-development",
-          "title": "Software Development",
-          "summary": "Full-stack software engineering with expertise in mobile, backend, frontend, and DevOps, underpinned by strong architecture and scalability practices.",
-          "children": [
-            { "project": "Frontend", "summary": "Next.js, React, HTML5, CSS3, Tailwind CSS" },
-            { "project": "Mobile", "summary": "iOS (Swift, Objective-C), Android (Kotlin), Flutter, Kotlin Multiplatform" },
-            { "project": "Backend", "summary": "Node.js, Python, Java, C#, Express.js" },
-            { "project": "Database", "summary": "PostgreSQL, MySQL, MongoDB, Redis" },
-            { "project": "Architecture", "summary": "Clean Architecture, Modularization, API Design, Microservices" },
-            { "project": "DevOps", "summary": "Docker, Kubernetes, AWS, Firebase, CI/CD (GitHub Actions, Jenkins)" },
-            { "project": "Security & Performance", "summary": "OWASP, App Security Best Practices, Performance Optimization" },
-            { "project": "Tools", "summary": "Git, Jira, Confluence, Notion, Slack, Trello" }
-          ],
-          "tags": ["skills", "technical", "full-stack", "mobile", "backend"]
-        },
-        {
           "id": "skills-team-management",
           "title": "Team Management",
           "summary": "Proven track record in leading engineering teams, setting technical vision, and improving team productivity.",
           "children": [
-            { "project": "Agile", "summary": "Scrum, Kanban, XP, Agile Coaching" },
             { "project": "People Management", "summary": "Hiring & Recruitment, Mentoring & Coaching, Performance Review, Career Development" },
-            { "project": "Cross-functional Leadership", "summary": "Facilitating collaboration between engineering, product, and design teams" },
+            { "project": "Cross-functional Leadership", "summary": "Facilitating collaboration between product engineering, product designer, and product manager" },
+            { "project": "Process Improvement", "summary": "Engineering Ownership, On-call Process, Postmortem Process" },
             { "project": "Conflict Resolution", "summary": "Mediation, Feedback Culture, Change Management" }
           ],
           "tags": ["skills", "leadership", "management", "engineering-manager"]
@@ -53,35 +37,48 @@ export const resumeData = {
           "title": "Project Management",
           "summary": "Experienced in managing multi-team, multi-vendor projects with focus on delivery quality and stakeholder alignment.",
           "children": [
-            { "project": "Methodologies", "summary": "Agile, Waterfall, Hybrid" },
-            { "project": "Risk Management", "summary": "Risk Identification, Mitigation Planning, Contingency Management" },
+            { "project": "Methodologies", "summary": "Agile, Waterfall, Scrum, LeSS Scrum" },
             { "project": "Stakeholder Management", "summary": "Client Communication, Expectation Management, Executive Reporting" },
-            { "project": "Delivery Management", "summary": "Budget Tracking, Resource Allocation, Scope Control" }
+            { "project": "Requirement Gathering", "summary": "Requirement Gathering, Requirement Analysis, Technical Specification, Technical Design" },
+            { "project": "Release Management", "summary": "Deployment Plan, Release Plan, Change Management Plan" }
           ],
           "tags": ["skills", "project-management", "delivery"]
         },
         {
-          "id": "skills-consulting-strategy",
-          "title": "Consulting & Strategy",
-          "summary": "Ability to bridge business goals with technical solutions, ensuring long-term scalability and ROI.",
+          "id": "skills-business-development-analysis",
+          "title": "Business Development & Analysis / Digital Transformation",
+          "summary": "Expert in analyzing business opportunities, developing growth strategies, and leading digital transformation initiatives to drive organizational change and competitive advantage.",
           "children": [
-            { "project": "Business Analysis", "summary": "Requirement Gathering, Process Optimization, Workflow Design" },
-            { "project": "Technology Strategy", "summary": "Tech Stack Selection, Scalability Planning, Cloud Migration" },
-            { "project": "Change Management", "summary": "Organizational Transformation, Digital Adoption" }
+            { "project": "Business Development", "summary": "Market Analysis, Growth Strategy, Partnership Development, Revenue Model Design" },
+            { "project": "Digital Transformation", "summary": "Technology Roadmap, Change Management, Digital Strategy, Automation Implementation" },
           ],
-          "tags": ["skills", "consulting", "strategy"]
+          "tags": ["skills", "business-development", "analysis", "digital-transformation"]
         },
         {
           "id": "skills-online-marketing",
           "title": "Online Marketing",
           "summary": "Leveraging digital channels to drive growth and user engagement.",
           "children": [
-            { "project": "Content Marketing", "summary": "SEO, Blog Strategy, Content Planning" },
-            { "project": "Social Media", "summary": "Facebook, Instagram, LinkedIn Campaigns" },
-            { "project": "Analytics", "summary": "Google Search Console, Firebase Analytics, Facebook Analytics, Google Analytics, Conversion Tracking, A/B Testing" }
+            { "project": "Content Marketing", "summary": "SEO, Blog Strategy, Content Planning, Target Audience Segmentation" },
+            { "project": "Social Media", "summary": "Facebook Ad, Instagram Ad" },
+            { "project": "Analytics", "summary": "Google Search Console, Google Analytics, Firebase Analytics, Facebook Analytics" }
           ],
           "tags": ["skills", "marketing", "growth"]
-        }
+        },
+        {
+          "id": "skills-software-development",
+          "title": "Software Development",
+          "summary": "Full-stack software engineering with expertise in mobile, backend, frontend, and DevOps, underpinned by strong architecture and scalability practices.",
+          "children": [
+            { "project": "Frontend", "summary": "Next.js (Intermediate), React (Basic), HTML5, CSS3, Ant Design" },
+            { "project": "Mobile", "summary": "iOS (Swift, Objective-C) (Advanced), Android (Kotlin) (Basic), Flutter (Intermediate), Kotlin Multiplatform (Basic)" },
+            { "project": "Backend", "summary": "Node.js (Basic), Python (Intermediate), GO (Basic)" },
+            { "project": "Database", "summary": "PostgreSQL, MySQL, MongoDB, Redis" },
+            { "project": "Architecture", "summary": "Clean Architecture, Modularization, API Design, Microservices, Event-Driven Architecture, Microservice-based Architecture" },
+            { "project": "DevOps", "summary": "AWS, Firebase, CI/CD (GitHub Actions, Bitrise)" },
+          ],
+          "tags": ["skills", "technical", "full-stack", "mobile", "backend"]
+        },
       ]
     },    
     {
@@ -223,7 +220,7 @@ export const resumeData = {
               "role": "Consultant",
               "location": "Bangkok, Thailand",
               "start": "2025",
-              "end": "2025",
+              "end": "Present",
               "summary": "Consulted on technology adoption and investment strategy for restaurant operations.",
               "details": [
                 "Advised on integrating technology into restaurant workflows, including POS, delivery platforms, and reservation systems.",
@@ -236,8 +233,8 @@ export const resumeData = {
               "project": "Healthcare at Home",
               "role": "Consultant",
               "location": "Bangkok, Thailand",
-              "start": "2022",
-              "end": "2022",
+              "start": "2020",
+              "end": "2021",
               "summary": "Consulted on digital transformation and new business model development for hospital services.",
               "details": [
                 "Advised on expanding hospital services to include at-home patient care by deploying nurses for in-home visits.",
