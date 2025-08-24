@@ -83,7 +83,7 @@ const HeroTagline = styled.div`
 
 const HeroSection = () => {
   return (
-    <HeroSectionContainer>
+    <HeroSectionContainer id="home">
       <HeroContent>
         <HeroTagline>Software Engineer - Product Builder - Consultant - Founder</HeroTagline>
         <HeroTitle>

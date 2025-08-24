@@ -7,7 +7,7 @@ export interface NavigationItem {
 
 export const navigationItems: NavigationItem[] = [
   { 
-    paths: ['/'], 
+    paths: ['/#home'], 
     label: 'Home',
     description: 'Home page - Personal brand, 9 keywords, and complete profile'
   },

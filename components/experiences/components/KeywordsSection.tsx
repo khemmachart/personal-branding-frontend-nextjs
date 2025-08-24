@@ -1,65 +1,82 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import {
   H2,
   Body,
   colors,
   spacing,
-  borderRadius,
   typography,
   breakpoints,
-  shadows,
-  transitions,
 } from '@/components/design-system'
+import { 
+  FaCode, 
+  FaCoffee, 
+  FaBeer, 
+  FaDumbbell, 
+  FaCamera, 
+  FaTshirt, 
+  FaHeart, 
+  FaGamepad, 
+  FaMusic 
+} from 'react-icons/fa'
 
-// Characters data
+// Characters data with icons
 const characters = [
   {
     keyword: 'Bits',
     category: 'เทคโนโลยี',
     description: 'สายคอม, โปรแกรมเมอร์, ไอที',
+    icon: FaCode,
   },
   {
     keyword: 'Brew',
     category: 'ไลฟ์สไตล์',
     description: 'กาแฟ, ความละมุน, ความชิล',
+    icon: FaCoffee,
   },
   {
     keyword: 'Beer',
     category: 'ไลฟ์สไตล์',
     description: 'สังสรรค์, ความเป็นกันเอง',
+    icon: FaBeer,
   },
   {
     keyword: 'Build',
     category: 'ฟิตเนส / เกม',
     description: 'การสร้างร่างกาย, พัฒนาตัวเอง, วางแผนในเกม',
+    icon: FaDumbbell,
   },
   {
     keyword: 'Bokeh',
     category: 'การถ่ายภาพ',
     description: 'ภาพละลายหลัง, ความอาร์ต',
+    icon: FaCamera,
   },
   {
     keyword: 'Blazer',
     category: 'แฟชั่น',
     description: 'สายแต่งตัวเนี้ยบ, Sartorial',
+    icon: FaTshirt,
   },
   {
     keyword: 'Bunny',
     category: 'สัตว์เลี้ยง',
     description: 'ด้านน่ารัก, ความอ่อนโยน, ความละมุน',
+    icon: FaHeart,
   },
   {
     keyword: 'Battle',
     category: 'เกม',
     description: 'การต่อสู้, ความท้าทาย, การแข่งขัน',
+    icon: FaGamepad,
   },
   {
     keyword: 'Beat',
     category: 'ดนตรี',
     description: 'จังหวะ, vibe, การเคลื่อนไหว, ความรู้สึกดนตรี',
+    icon: FaMusic,
   },
 ]
 
@@ -117,8 +134,9 @@ const KeywordsSectionSubtitle = styled(Body)`
 `
 
 const KeywordsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: ${spacing.lg};
   margin-top: ${spacing.xxxl};
   animation: ${fadeInUp} 1s ease-out;
@@ -126,76 +144,19 @@ const KeywordsGrid = styled.div`
   animation-fill-mode: both;
   
   @media (max-width: ${breakpoints.tablet}) {
-    grid-template-columns: 1fr;
     gap: ${spacing.md};
   }
 `
 
-const KeywordCard = styled.div<{ $index: number; $isHovered: boolean }>`
-  background: ${colors.ivoryWhite};
-  border: 2px solid ${props => props.$isHovered ? colors.accentBlue : colors.lightGray};
-  border-radius: ${borderRadius.xl};
-  padding: ${spacing.xl};
-  cursor: pointer;
-  transition: all ${transitions.normal};
-  position: relative;
-  overflow: hidden;
+const IconContainer = styled.div<{ $index: number }>`
   animation: ${fadeInUp} 0.6s ease-out;
   animation-delay: ${props => props.$index * 0.1}s;
   animation-fill-mode: both;
-  
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: ${shadows.medium};
-    border-color: ${colors.accentBlue};
-  }
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, ${colors.accentBlue}, ${colors.graphite});
-    transform: scaleX(${props => props.$isHovered ? 1 : 0});
-    transition: transform ${transitions.normal};
-    transform-origin: left;
-  }
-`
-
-const KeywordName = styled.div`
-  font-size: ${typography.fontSize.h3};
-  font-weight: ${typography.fontWeight.bold};
-  color: ${colors.darkGray};
-  margin-bottom: ${spacing.sm};
-  display: flex;
-  align-items: center;
-  gap: ${spacing.sm};
-`
-
-const KeywordCategory = styled.div`
-  font-size: ${typography.fontSize.caption};
-  color: ${colors.accentBlue};
-  background: ${colors.accentBlue}15;
-  padding: ${spacing.xs} ${spacing.md};
-  border-radius: ${borderRadius.lg};
-  margin-bottom: ${spacing.md};
-  display: inline-block;
-  font-weight: ${typography.fontWeight.medium};
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-`
-
-const KeywordDescription = styled(Body)`
-  color: ${colors.graphite};
-  margin: 0;
-  line-height: 1.6;
 `
 
 const FloatingIcon = styled.div<{ $animationDelay: number }>`
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   background: linear-gradient(135deg, ${colors.accentBlue}, ${colors.graphite});
   border-radius: 50%;
   display: flex;
@@ -203,14 +164,12 @@ const FloatingIcon = styled.div<{ $animationDelay: number }>`
   justify-content: center;
   color: white;
   font-weight: ${typography.fontWeight.bold};
-  font-size: 14px;
+  font-size: 18px;
   animation: ${float} 3s ease-in-out infinite;
   animation-delay: ${props => props.$animationDelay}s;
 `
 
 const KeywordsSection = () => {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-
   return (
     <KeywordsSectionContainer>
       <LandingContainer>
@@ -220,26 +179,16 @@ const KeywordsSection = () => {
         </KeywordsSectionSubtitle>
         
         <KeywordsGrid>
-          {characters.map((char, index) => (
-            <KeywordCard
-              key={char.keyword}
-              $index={index}
-              $isHovered={hoveredCard === char.keyword}
-              onMouseEnter={() => setHoveredCard(char.keyword)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <KeywordName>
+          {characters.map((char, index) => {
+            const IconComponent = char.icon
+            return (
+              <IconContainer key={char.keyword} $index={index}>
                 <FloatingIcon $animationDelay={index * 0.2}>
-                  {char.keyword.charAt(0)}
+                  <IconComponent size={20} />
                 </FloatingIcon>
-                {char.keyword}
-              </KeywordName>
-              <KeywordCategory>{char.category}</KeywordCategory>
-              <KeywordDescription>
-                {char.description}
-              </KeywordDescription>
-            </KeywordCard>
-          ))}
+              </IconContainer>
+            )
+          })}
         </KeywordsGrid>
       </LandingContainer>
     </KeywordsSectionContainer>
