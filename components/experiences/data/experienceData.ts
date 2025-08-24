@@ -297,12 +297,115 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2020",
           "end": "present",
+          "image": {
+            "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=60",
+            "alt": "Pool villa exterior at sunset"
+          },
           "summary": "Built and launched a fully operational pool villa booking platform from the ground up, driving direct bookings and organic growth.",
           "details": [
             "Development, conceived, designed, and developed the entire web platform as a solo engineer, covering frontend, backend coordination, and system architecture.",
             "Notification, integrated LINE push notifications for real-time booking updates",
             "SEO & Growth Marketing: Boosted organic website traffic by 3,200% YoY, peaking at 1,600+ daily visitors from Google Search.",
             "Operation, managed business operations end-to-end, product development, sales, and administration to meet revenue targets."
+          ],
+          "detailSections": [
+            {
+              "title": "Product Development",
+              "items": [
+                "Conceived, designed, and developed the entire web platform as a solo engineer, covering frontend, backend, and system architecture.",
+                "Built a system capable of supporting 200–300 daily active users, ensuring stability during peak traffic.",
+                "Integrated LINE push notifications for real-time booking updates, enhancing customer experience."
+              ],
+              "image": {
+                "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=60",
+                "alt": "Product development dashboard and code preview"
+              },
+              "subtopics": [
+                {
+                  "title": "Architecture",
+                  "items": [
+                    "Modular services for booking, payments, notifications, and content.",
+                    "PostgreSQL primary with Redis caching and rate limiting on critical endpoints.",
+                    "CDN for static assets and image optimization to reduce TTFB and LCP."
+                  ],
+                  "image": {
+                    "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60",
+                    "alt": "System architecture diagram on screen"
+                  }
+                },
+                {
+                  "title": "Reliability & Performance",
+                  "items": [
+                    "SLO target 99.9% — health checks, uptime monitoring, and alerting.",
+                    "Load tested up to 300 DAU and ~20 RPS without degradation.",
+                    "Queue-based background jobs for notifications and long-running tasks."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Growth & Marketing",
+              "items": [
+                "Boosted organic website traffic by 3,200% YoY, peaking at 1,600+ daily visitors via SEO optimization.",
+                "Achieved 80+ bookings during high season, validating product-market fit.",
+                "Launched promotions and campaigns (Referral, Retention, Welcome Set) that increased customer acquisition and retention."
+              ],
+              "image": {
+                "src": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=60",
+                "alt": "Growth analytics and SEO charts"
+              },
+              "subtopics": [
+                {
+                  "title": "SEO & Content",
+                  "items": [
+                    "Topic clusters and internal linking to improve topical authority.",
+                    "Structured data (schema.org) for listings, FAQs, and breadcrumbs.",
+                    "PageSpeed targets: LCP < 2.5s, CLS < 0.1 on key pages."
+                  ],
+                  "image": {
+                    "src": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=60",
+                    "alt": "SEO dashboard and content planning"
+                  }
+                },
+                {
+                  "title": "Campaigns",
+                  "items": [
+                    "Referral cohorts with A/B messaging and incentive tuning.",
+                    "Welcome Set for first-time guests; retention offers for repeat customers.",
+                    "Remarketing audiences based on on-site behaviors."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Operations & Leadership",
+              "items": [
+                "Defined company vision and translated it into OKRs/KPIs to aim for the #1 pool villa booking platform in Bangsaen.",
+                "Streamlined admin workflows by implementing multi-channel chat integration, reducing customer response time.",
+                "Standardized customer support messaging templates, improving service consistency across the team.",
+                "Partnered with villa owners to expand supply on the platform, driving business growth."
+              ],
+              "image": {
+                "src": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=60",
+                "alt": "Operations team collaborating and managing workflows"
+              },
+              "subtopics": [
+                {
+                  "title": "Support & Ops",
+                  "items": [
+                    "Multi-channel chat integration with macros/templates to reduce response times.",
+                    "Knowledge base for tier-1 issues and escalation paths for complex cases."
+                  ]
+                },
+                {
+                  "title": "Partnerships",
+                  "items": [
+                    "Onboarding playbook for villa owners: content, pricing, SLAs.",
+                    "Quality standards checklist to maintain guest experience."
+                  ]
+                }
+              ]
+            }
           ],
           "tags": ["founder", "booking-platform", "product", "full-stack", "marketing"]
         },
@@ -313,6 +416,10 @@ export const resumeData = {
           "location": "Bangkok, Thailand",
           "start": "2024",
           "end": "present",
+          "image": {
+            "src": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=60",
+            "alt": "AI concept and product interface"
+          },
           "summary": "Created an AI-driven content creation and distribution platform to help users generate high-quality, audience-specific content at scale.",
           "details": [
             "Designed, developed, and deployed the platform end-to-end as a solo engineer, integrating AI workflows for idea generation, copywriting, and media creation.",

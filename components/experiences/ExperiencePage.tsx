@@ -8,6 +8,7 @@ import KeywordsSection from './components/KeywordsSection';
 import CTASection from './components/CTASection';
 import StructuredDataScript from './components/StructuredDataScript';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type ItemT = {
   id?: string;
@@ -225,6 +226,12 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
               <SectionContent>
                 {sections.entrepreneurship.events.map((it: ItemT) => (
                   <div key={it.id}>
+                    {(it as any).image?.src && (
+                      <div style={{ position: 'relative', width: '100%', maxWidth: 960, marginBottom: 8 }}>
+                        {/* Use next/image for consistency */}
+                        
+                      </div>
+                    )}
                     <ItemBlock it={it} />
                     {it.id && (
                       <div style={{ marginBottom: 48 }}>

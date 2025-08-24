@@ -5,6 +5,7 @@ import { PageLayout } from '@/components/design-system'
 import { Baseline } from './ui/baseline'
 import { Container, H1, Section, SectionTitle, SectionContent, Item, Org, Role, Summary, Bullets, Meta } from './ui/components'
 import NextLink from 'next/link'
+import Image from 'next/image'
 
 type ItemT = {
   id?: string;
@@ -28,6 +29,18 @@ function ItemBlockLite({ it }: { it: ItemT }) {
   }
   return (
     <Item>
+      {(it as any).image?.src && (
+        <div style={{ position: 'relative', width: '100%', maxWidth: 960, marginBottom: 8 }}>
+          <Image 
+            src={(it as any).image.src}
+            alt={(it as any).image.alt || ''}
+            width={960}
+            height={540}
+            style={{ width: '100%', height: 'auto', borderRadius: 8 }}
+            unoptimized
+          />
+        </div>
+      )}
       <div>
         <Org>{displayTitle}</Org>
         {it.role && <Role>{it.role}</Role>}

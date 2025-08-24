@@ -30,6 +30,13 @@ const nextConfig = {
   },
   images: {
     minimumCacheTTL: 864000,
+    domains: [
+      'images.unsplash.com',
+      'source.unsplash.com',
+      'plus.unsplash.com',
+      'admin.pattayavillaresort.com',
+      'admin.isarapoolvilla.com',
+    ],
     remotePatterns: [
       {
         protocol: 'https',
@@ -38,6 +45,18 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'admin.isarapoolvilla.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'plus.unsplash.com',
       }
     ],
     unoptimized: false,
