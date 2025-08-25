@@ -93,9 +93,12 @@ export const resumeData = {
           "end": "present",
           "summary": "Lead technical direction for client-facing digital transformation projects, aligning business needs with scalable, secure solutions.",
           "details": [
+            "Lead technical direction for client-facing digital transformation projects, aligning business needs with scalable, secure solutions.",
             "Contributed to designing and implementing enterprise-grade architectures that helped reduce operational costs by ~40%.",
-            "Effectively managed cross-functional stakeholders and vendors, achieving 100% on-time and on-budget project delivery",
-            "Led the engineering team to improve processes and workflows, enhancing delivery efficiency and collaboration across workstreams."
+            "Drove high-level technical design, producing architectural blueprints and solution frameworks to guide engineering teams in delivering resilient, future-proof systems.",
+            "Oversaw the end-to-end software development lifecycle, from product design and development through to delivery and release, ensuring alignment with business goals and quality standards.",
+            "Effectively managed cross-functional stakeholders and vendors, achieving 100% on-time and on-budget project delivery.",
+            "Led the engineering team to improve processes and workflows, enhancing delivery efficiency and collaboration across workstreams.",
           ],
           "tags": ["consulting", "architecture", "client-facing"]
         },
@@ -110,7 +113,9 @@ export const resumeData = {
           "details": [
             "Acted as client-facing lead, gathering requirements, providing technical consulting, and overseeing the delivery process to ensure alignment and quality outcomes.",
             "Managed a team of 6–8 engineers, successfully enabling over 40% of team members to achieve promotions during tenure.",
-            "Established engineering ownership standards, on-call process, and postmortem practices to improve operational reliability and knowledge sharing."
+            "Established engineering ownership standards, on-call process, and postmortem practices to improve operational reliability and knowledge sharing.",
+            "Collaborated with HR and leadership to design and execute a New Graduate Recruitment & Development Program, leading technical evaluations and mentorship initiatives to attract and nurture early-career talent.",
+            "Contributed to redesigned the interview process to enhance candidate experience, ensuring professionalism and positive impressions.",
           ],
           "tags": ["leadership", "delivery", "process"]
         },
@@ -126,6 +131,7 @@ export const resumeData = {
             "Owned overall technical process and high-level system design, aligning architecture with business and product requirements.",
             "Acted as primary technical contact for clients and vendors, gathering and refining requirements, and translating them into scalable technical solutions.",
             "Coordinated engineering efforts across teams, ensuring alignment on standards, workflows, and delivery timelines.",
+            "Estimated project scope and cost, breaking down tasks and evaluating effort to provide accurate pricing and delivery forecasts for clients.",
           ],
           "tags": ["technical-lead", "system-design", "architecture", "stakeholders", "ecommerce"]
         },
@@ -138,9 +144,11 @@ export const resumeData = {
           "end": "2021-04",
           "summary": "Developed and maintained high-performance iOS eCommerce application with 1M+ MAU, focusing on UX and stability.",
           "details": [
-            "Coded and maintained core iOS features for a large-scale eCommerce app, improving app load times by 20%.",
+            "Developed and maintained high-performance iOS eCommerce application with 1M+ MAU, focusing on UX and stability.",
+            "Coded and maintained core iOS features for a large-scale eCommerce app, and integrated with the ALL member system.",
             "Coordinated closely with QA, designers, and product managers to ensure features met design, quality, and business requirements, achieving 100% on-time delivery.",
-            "Proactively identified UI/UX improvements and collaborated/consulted with design team to enhance user experience without impacting delivery schedules."
+            "Proactively contributed to the software development process within the squad, driving best practices, collaboration, and continuous improvement to ensure smooth and efficient delivery.",
+            "Identified UI/UX improvements and consulted with the design team (grooming ceremony) to enhance user experience without impacting delivery schedules.",
           ],
           "tags": ["ios", "clean-architecture", "mobile", "ecommerce"]
         },
@@ -168,10 +176,11 @@ export const resumeData = {
           "end": "2019-06",
           "summary": "Led iOS development and game workflow coordination for Panya Live-Trivia App, a national-scale real-time streaming platform.",
           "details": [
+            "Led iOS development and game workflow coordination for Panya Live-Trivia App, a national-scale real-time streaming platform,  supporting up to 70K concurrent users with minimal latency during live shows",
+            "Integrated backend services and optimized client-side performance to ensure smooth user experience under high traffic loads.",
             "Acted as primary engineer overseeing the gameplay workflow, coordinating closely with the Product Owner to ensure seamless live show operations.",
             "Developed an iOS control application to manage live quiz workflows, including question timing, answer validation, and real-time result display.",
-            "Built and maintained the main Panya iOS application, supporting up to 70K concurrent users with minimal latency during live shows.",
-            "Integrated backend services and optimized client-side performance to ensure smooth user experience under high traffic loads."
+            "Contributed to conceptualizing live-trivia game requirements (real-time synchronization, latency handling, gameplay logic), while monitoring and analyzing system performance to maintain scalability and reliability under peak loads.",
           ],
           "tags": ["live-streaming", "realtime", "ios", "high-traffic"]
         },
@@ -318,33 +327,39 @@ export const resumeData = {
               "title": "Product Development",
               "items": [
                 "Conceived, designed, and developed the entire web platform as a solo engineer, covering frontend, backend, and system architecture.",
-                "Built a system capable of supporting 200–300 daily active users, ensuring stability during peak traffic.",
-                "Integrated LINE push notifications for real-time booking updates, enhancing customer experience."
+                "Built a system capable of supporting up to 283 peak DAU and 5.2K MAU, ensuring stability during peak traffic.",
+                "Integrated LINE push notifications for real-time booking updates, enhancing customer experience and engagement.",
+                "Applied AI-driven development in both coding and content generation, accelerating delivery and improving platform capabilities.",
               ],
               "image": {
-                "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=60",
-                "alt": "Product development dashboard and code preview"
+                "src": "/images/entrepreneurship/active-user.png",
+                "alt": "System architecture diagram on screen"
               },
               "subtopics": [
                 {
                   "title": "Architecture",
                   "items": [
-                    "Modular services for booking, payments, notifications, and content.",
-                    "PostgreSQL primary with Redis caching and rate limiting on critical endpoints.",
-                    "CDN for static assets and image optimization to reduce TTFB and LCP."
+                    "Monolithic architecture encompassing booking, payments, notifications, and content modules within a unified codebase.",
+                    "PostgreSQL primary database with Redis caching and rate limiting on critical endpoints to ensure stability and responsiveness.",
+                    "CDN for static assets and image optimization",
                   ],
-                  "image": {
-                    "src": "/images/entrepreneurship/active-user.png",
+                  "images": [{
+                    "src": "/images/entrepreneurship/system-architect.png",
                     "alt": "System architecture diagram on screen"
-                  }
+                  }]
                 },
                 {
-                  "title": "Reliability & Performance",
+                  "title": "LINE Notifications",
                   "items": [
-                    "SLO target 99.9% — health checks, uptime monitoring, and alerting.",
-                    "Load tested up to 300 DAU and ~20 RPS without degradation.",
-                    "Queue-based background jobs for notifications and long-running tasks."
-                  ]
+                    "Integrated LINE Messaging API to enable automated push notifications for booking updates.",
+                    "Designed notification flow covering booking confirmations, check-in reminders, and invoice payment status changes in real time.",
+
+                    "Improved customer engagement and satisfaction, providing instant updates directly in the LINE app.",
+                  ],
+                  "images": [{
+                    "src": "/images/entrepreneurship/line-notifications.png",
+                    "alt": "LINE notifications dashboard"
+                  }]
                 }
               ]
             },
@@ -355,17 +370,14 @@ export const resumeData = {
                 "Achieved 80+ bookings during high season, validating product-market fit.",
                 "Launched promotions and campaigns (Referral, Retention, Welcome Set) that increased customer acquisition and retention."
               ],
-              "image": {
-                "src": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=60",
-                "alt": "Growth analytics and SEO charts"
-              },
               "subtopics": [
                 {
                   "title": "SEO & Content",
                   "items": [
-                    "Topic clusters and internal linking to improve topical authority.",
-                    "Structured data (schema.org) for listings, FAQs, and breadcrumbs.",
-                    "PageSpeed targets: LCP < 2.5s, CLS < 0.1 on key pages."
+                    "Structured pages and metadata to support technical SEO (titles, meta tags, schema markup, internal linking).",
+                    "Built and maintained XML sitemaps to ensure comprehensive and accurate indexation.",
+                    "Researched and planned content strategy and keyword targeting (on-page SEO), aligning topics with business goals and user intent.",
+                    "Executed off-page SEO initiatives, including outreach and collaboration with external sites to strengthen domain authority.",
                   ],
                   "images": [
                     {
@@ -375,6 +387,10 @@ export const resumeData = {
                     {
                       "src": "/images/entrepreneurship/seo-after.png",
                       "alt": "SEO dashboard and content planning"
+                    },
+                    {
+                      "src": "/images/entrepreneurship/search-keywords.png",
+                      "alt": "Search keywords"
                     }
                   ]
                 },
@@ -384,6 +400,17 @@ export const resumeData = {
                     "Referral cohorts with A/B messaging and incentive tuning.",
                     "Welcome Set for first-time guests; retention offers for repeat customers.",
                     "Remarketing audiences based on on-site behaviors."
+                  ],
+                  "images": [
+                    {
+                      "src": "/images/entrepreneurship/referral-cohort.png",
+                      "alt": "Referral cohort dashboard"
+                    },
+                    {
+                      "src": "/images/entrepreneurship/retention-offer.png",
+                      "alt": "Retention offer dashboard"
+                    },
+                    
                   ]
                 }
               ]

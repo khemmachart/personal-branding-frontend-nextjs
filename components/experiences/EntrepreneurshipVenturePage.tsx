@@ -123,7 +123,20 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
         <Section id="intro">
           <SectionContent>
             <Item>
-              {(venture as any).image?.src && (
+              <div>
+                <Org>{(venture as any).org}</Org>
+                {(venture as any).role && <Role>{(venture as any).role}</Role>}
+              </div>
+              {(venture as any).summary && <Summary>{(venture as any).summary}</Summary>}
+              {Array.isArray((venture as any).details) && (venture as any).details.length > 0 && (
+                <Bullets>
+                  {(venture as any).details.map((d: string, i: number) => (
+                    <li key={i}>{d}</li>
+                  ))}
+                </Bullets>
+              )}
+            </Item>
+            {(venture as any).image?.src && (
                 <ClickableImage 
                   style={{ position: 'relative', width: '100%', maxWidth: 960, marginBottom: 8 }}
                   onClick={() => openImageModal((venture as any).image.src, (venture as any).image.alt || '')}
@@ -138,12 +151,6 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                   />
                 </ClickableImage>
               )}
-              <div>
-                <Org>{(venture as any).title}</Org>
-                {(venture as any).role && <Role>{(venture as any).role}</Role>}
-              </div>
-              {(venture as any).summary && <Summary>{(venture as any).summary}</Summary>}
-            </Item>
           </SectionContent>
         </Section>
 
