@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { resumeData } from './data/experienceData'
 import { PageLayout } from '@/components/design-system'
 import { Baseline } from './ui/baseline'
@@ -22,88 +22,133 @@ type ItemT = {
   notes?: string;
 }
 
+// Modal styled components
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  cursor: pointer;
+`
+
+const ModalContent = styled.div`
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  cursor: default;
+`
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+  
+  &:hover {
+    opacity: 0.7;
+  }
+`
+
+const ClickableImage = styled.div`
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+`
+
 export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null)
+  
   const group = resumeData.groups.find(g => g.title === 'entrepreneurship')
   const venture = (group?.events || []).find((e: any) => e.id === id)
+
+  const openImageModal = (src: string, alt: string) => {
+    setSelectedImage({ src, alt })
+  }
+
+  const closeImageModal = () => {
+    setSelectedImage(null)
+  }
+
+  // Handle keyboard events for closing modal
+  React.useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeImageModal()
+      }
+    }
+
+    if (selectedImage) {
+      document.addEventListener('keydown', handleKeyDown)
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedImage])
 
   if (!venture) {
     return (
       <PageLayout>
-        <Container style={{ marginTop: 48 }}>
-          <Baseline />
-          <H1>Not Found</H1>
-          <Summary>We couldn’t find this venture.</Summary>
+        <Baseline />
+        <Container>
+          <H1>Venture not found</H1>
         </Container>
       </PageLayout>
     )
   }
 
-  const range = (s?: string, e?: string) => [s, e?.toLowerCase?.() === 'present' ? 'Present' : e].filter(Boolean).join(' – ')
-
   return (
     <PageLayout>
-      <Container style={{ marginTop: 48 }}>
-        <Baseline />
-        <header>
-          <H1>{(venture as any).org || (venture as any).title || (venture as any).project}</H1>
-          {(venture as any).links && (
-            <LinksSection>
-              {(venture as any).links.website && (
-                <a href={(venture as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</a>
-              )}
-              {(venture as any).links.booking && (
-                <a href={(venture as any).links.booking} target="_blank" rel="noopener noreferrer">Booking ↗</a>
-              )}
-              {(venture as any).links.demo && (
-                <a href={(venture as any).links.demo} target="_blank" rel="noopener noreferrer">Demo ↗</a>
-              )}
-              {(venture as any).links.deck && (
-                <a href={(venture as any).links.deck} target="_blank" rel="noopener noreferrer">Deck ↗</a>
-              )}
-              {Array.isArray((venture as any).links.press) && (venture as any).links.press.length > 0 && (
-                <a href={(venture as any).links.press[0]} target="_blank" rel="noopener noreferrer">Press ↗</a>
-              )}
-              {(venture as any).links.instagram && (
-                <a href={(venture as any).links.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-              )}
-              {(venture as any).links.twitter && (
-                <a href={(venture as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</a>
-              )}
-            </LinksSection>
-          )}
-          <Summary>{(venture as any).summary}</Summary>
-          <Meta>{[range((venture as any).start, (venture as any).end), (venture as any).location].filter(Boolean).join(' — ')}</Meta>
-        </header>
-
-        <Section id="overview">
-          <SectionTitle>Overview</SectionTitle>
+      <Baseline />
+      <Container>
+        <Section id="intro">
           <SectionContent>
             <Item>
-              {Array.isArray((venture as any).details) && (venture as any).details.length > 0 && (
-                <Bullets>
-                  {(venture as any).details.map((d: string, i: number) => (
-                    <li key={i}>{d}</li>
-                  ))}
-                </Bullets>
+              {(venture as any).image?.src && (
+                <ClickableImage 
+                  style={{ position: 'relative', width: '100%', maxWidth: 960, marginBottom: 8 }}
+                  onClick={() => openImageModal((venture as any).image.src, (venture as any).image.alt || '')}
+                >
+                  <Image 
+                    src={(venture as any).image.src}
+                    alt={(venture as any).image.alt || ''}
+                    width={960}
+                    height={540}
+                    style={{ width: '100%', height: 'auto', borderRadius: 8 }}
+                    unoptimized
+                  />
+                </ClickableImage>
               )}
-            </Item>
-            {(venture as any).image?.src && (
-              <div style={{ position: 'relative', width: '100%', maxWidth: 1024 }}>
-                <Image 
-                  src={(venture as any).image.src}
-                  alt={(venture as any).image.alt || ''}
-                  width={1024}
-                  height={576}
-                  style={{ width: '100%', height: 'auto', borderRadius: 8 }}
-                />
+              <div>
+                <Org>{(venture as any).title}</Org>
+                {(venture as any).role && <Role>{(venture as any).role}</Role>}
               </div>
-            )}
+              {(venture as any).summary && <Summary>{(venture as any).summary}</Summary>}
+            </Item>
           </SectionContent>
         </Section>
 
         {Array.isArray((venture as any).detailSections) && (venture as any).detailSections.length > 0 && (
           <Section id="details">
-            <SectionTitle>Details</SectionTitle>
             <SectionContent>
               {(venture as any).detailSections.map((sec: any, i: number) => (
                 <Item key={i}>
@@ -116,7 +161,10 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                     </Bullets>
                   )}
                   {sec.image?.src && (
-                    <div style={{ marginTop: 12, position: 'relative', width: '100%', maxWidth: 960 }}>
+                    <ClickableImage 
+                      style={{ marginTop: 12, position: 'relative', width: '100%', maxWidth: 960 }}
+                      onClick={() => openImageModal(sec.image.src, sec.image.alt || '')}
+                    >
                       <Image 
                         src={sec.image.src} 
                         alt={sec.image.alt || ''} 
@@ -125,7 +173,7 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                         style={{ width: '100%', height: 'auto', borderRadius: 8 }}
                         unoptimized
                       />
-                    </div>
+                    </ClickableImage>
                   )}
                   {Array.isArray(sec.subtopics) && sec.subtopics.length > 0 && (
                     <div style={{ marginTop: 12 }}>
@@ -142,8 +190,12 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                               ))}
                             </Bullets>
                           )}
+                          {/* Support for single image (backward compatibility) */}
                           {sub.image?.src && (
-                            <div style={{ marginTop: 12, position: 'relative', width: '100%', maxWidth: 960 }}>
+                            <ClickableImage 
+                              style={{ marginTop: 12, position: 'relative', width: '100%', maxWidth: 960 }}
+                              onClick={() => openImageModal(sub.image.src, sub.image.alt || '')}
+                            >
                               <Image 
                                 src={sub.image.src} 
                                 alt={sub.image.alt || ''} 
@@ -152,6 +204,32 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                                 style={{ width: '100%', height: 'auto', borderRadius: 8 }}
                                 unoptimized
                               />
+                            </ClickableImage>
+                          )}
+                          {/* Support for multiple images */}
+                          {Array.isArray(sub.images) && sub.images.length > 0 && (
+                            <div style={{ marginTop: 12 }}>
+                              {sub.images.map((img: any, imgIndex: number) => (
+                                <ClickableImage
+                                  key={imgIndex} 
+                                  style={{ 
+                                    marginTop: imgIndex > 0 ? 12 : 0, 
+                                    position: 'relative', 
+                                    width: '100%', 
+                                    maxWidth: 960 
+                                  }}
+                                  onClick={() => openImageModal(img.src, img.alt || '')}
+                                >
+                                  <Image 
+                                    src={img.src} 
+                                    alt={img.alt || ''} 
+                                    width={960}
+                                    height={540}
+                                    style={{ width: '100%', height: 'auto', borderRadius: 8 }}
+                                    unoptimized
+                                  />
+                                </ClickableImage>
+                              ))}
                             </div>
                           )}
                         </SubtopicCard>
@@ -164,6 +242,29 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
           </Section>
         )}
       </Container>
+
+      {/* Full-screen Image Modal */}
+      {selectedImage && (
+        <ModalOverlay onClick={closeImageModal}>
+          <ModalContent onClick={(e) => e.stopPropagation()}>
+            <CloseButton onClick={closeImageModal}>&times;</CloseButton>
+            <Image
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              width={1920}
+              height={1080}
+              style={{
+                width: 'auto',
+                height: 'auto',
+                maxWidth: '95vw',
+                maxHeight: '95vh',
+                objectFit: 'contain'
+              }}
+              unoptimized
+            />
+          </ModalContent>
+        </ModalOverlay>
+      )}
     </PageLayout>
   )
 }

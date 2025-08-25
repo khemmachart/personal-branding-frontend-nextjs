@@ -94,7 +94,7 @@ export const resumeData = {
           "summary": "Lead technical direction for client-facing digital transformation projects, aligning business needs with scalable, secure solutions.",
           "details": [
             "Contributed to designing and implementing enterprise-grade architectures that helped reduce operational costs by ~40%.",
-            "Coordinated cross-functional stakeholders and vendors to meet project milestones on time and within budget.",
+            "Effectively managed cross-functional stakeholders and vendors, achieving 100% on-time and on-budget project delivery",
             "Led the engineering team to improve processes and workflows, enhancing delivery efficiency and collaboration across workstreams."
           ],
           "tags": ["consulting", "architecture", "client-facing"]
@@ -295,18 +295,15 @@ export const resumeData = {
           "start": "2020",
           "end": "present",
           "image": {
-            "src": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=60",
+            "src": "/images/entrepreneurship/isara-pool-villa.png",
             "alt": "Pool villa exterior at sunset"
           },
           "links": {
-            "website": "https://isara.example.com",
-            "booking": "https://isara.example.com/booking",
-            "deck": "https://assets.example.com/isara-deck.pdf",
-            "press": [
-              "https://news.example.com/isara-feature",
-              "https://blog.example.com/isara-growth-story"
-            ],
-            "instagram": "https://instagram.com/isara_poolvilla"
+            "website": "https://www.isarapoolvilla.com/",
+            "booking": "https://www.isarapoolvilla.com/products/842/bookings/BKN-20250824115841-NMCD0P/orders/ORD-20250824115841-T5BSC7",
+            "articles": "https://www.isarapoolvilla.com/blogs",
+            "facebook": "https://www.facebook.com/IsaraPoolvillaTH/",
+            "instagram": "https://www.instagram.com/isarapoolvilla/"
           },
           "summary": "Built and launched a fully operational pool villa booking platform from the ground up, driving direct bookings and organic growth.",
           "details": [
@@ -337,7 +334,7 @@ export const resumeData = {
                     "CDN for static assets and image optimization to reduce TTFB and LCP."
                   ],
                   "image": {
-                    "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=60",
+                    "src": "/images/entrepreneurship/active-user.png",
                     "alt": "System architecture diagram on screen"
                   }
                 },
@@ -370,10 +367,16 @@ export const resumeData = {
                     "Structured data (schema.org) for listings, FAQs, and breadcrumbs.",
                     "PageSpeed targets: LCP < 2.5s, CLS < 0.1 on key pages."
                   ],
-                  "image": {
-                    "src": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=60",
-                    "alt": "SEO dashboard and content planning"
-                  }
+                  "images": [
+                    {
+                      "src": "/images/entrepreneurship/seo-before.png",
+                      "alt": "SEO dashboard and content planning"
+                    },
+                    {
+                      "src": "/images/entrepreneurship/seo-after.png",
+                      "alt": "SEO dashboard and content planning"
+                    }
+                  ]
                 },
                 {
                   "title": "Campaigns",
@@ -547,15 +550,12 @@ export const resumeData = {
           "id": "contact-primary",
           "summary": "Primary contact and social links.",
           "details": [
-            "Email: k.chutapetch+works@gmail.com",
+            "Email: k.chutapetch+career@gmail.com",
             "LinkedIn: linkedin.com/in/khemmachart",
             "GitHub: github.com/khemmachart",
             "Blog: blog.khemmachart.dev",
             "Portfolio: khemmachart.dev",
             "Location: Bangkok, Thailand",
-            "Facebook: facebook.com/khemmachart",
-            "Instagram: instagram.com/khemmachart",
-            "Twitter: twitter.com/khemmachart"
           ]
         }
       ]

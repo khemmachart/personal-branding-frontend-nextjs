@@ -236,12 +236,6 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
               <SectionContent>
                 {sections.entrepreneurship.events.map((it: ItemT) => (
                   <div key={it.id}>
-                    {(it as any).image?.src && (
-                      <div style={{ position: 'relative', width: '100%', maxWidth: 960, marginBottom: 8 }}>
-                        {/* Use next/image for consistency */}
-                        
-                      </div>
-                    )}
                     <ItemBlock it={it} />
                     {(it as any).links && (
                       <LinksSection>
@@ -257,8 +251,11 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
                         {(it as any).links.deck && (
                           <Link href={(it as any).links.deck} target="_blank" rel="noopener noreferrer">Deck ↗</Link>
                         )}
-                        {Array.isArray((it as any).links.press) && (it as any).links.press.length > 0 && (
-                          <Link href={(it as any).links.press[0]} target="_blank" rel="noopener noreferrer">Press ↗</Link>
+                        {(it as any).links.articles && (
+                          <Link href={(it as any).links.articles} target="_blank" rel="noopener noreferrer">Articles ↗</Link>
+                        )}
+                        {(it as any).links.facebook && (
+                          <Link href={(it as any).links.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</Link>
                         )}
                         {(it as any).links.instagram && (
                           <Link href={(it as any).links.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</Link>
@@ -273,7 +270,7 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
                     )}
                     
                     {it.id && (
-                      <LinksSection style={{ marginBottom: 48 }}>
+                      <LinksSection style={{ marginBottom: 24 }}>
                         <Link href={`/entrepreneurship/${it.id}`}>See more details →</Link>
                       </LinksSection>
                     )}

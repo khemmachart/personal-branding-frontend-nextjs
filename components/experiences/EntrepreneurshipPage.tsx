@@ -62,8 +62,11 @@ function ItemBlockLite({ it }: { it: ItemT }) {
           {(it as any).links.deck && (
             <NextLink href={(it as any).links.deck} target="_blank" rel="noopener noreferrer">Deck ↗</NextLink>
           )}
-          {Array.isArray((it as any).links.press) && (it as any).links.press.length > 0 && (
-            <NextLink href={(it as any).links.press[0]} target="_blank" rel="noopener noreferrer">Press ↗</NextLink>
+          {(it as any).links.articles && (
+            <NextLink href={(it as any).links.articles} target="_blank" rel="noopener noreferrer">Articles ↗</NextLink>
+          )}
+          {(it as any).links.facebook && (
+            <NextLink href={(it as any).links.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</NextLink>
           )}
           {(it as any).links.instagram && (
             <NextLink href={(it as any).links.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</NextLink>
