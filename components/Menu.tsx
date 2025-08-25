@@ -226,6 +226,9 @@ export const Menu = () => {
             const href = item.paths[0];
             if (!href) return null;
             
+            // Add null check for pathname
+            if (!pathname) return null;
+            
             const isActive = isPathActive(item.paths, pathname, activeHash);
             
             return (

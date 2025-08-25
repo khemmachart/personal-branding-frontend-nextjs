@@ -261,32 +261,32 @@ export const resumeData = {
             { 
               "project": "Nelika", 
               "summary": "Developed a UDID registration application for a major telecommunication provider (MyAIS Native), ensuring secure device identification and smooth integration with existing systems.", 
-              "start": "2023-01", 
-              "end": "2023-02" 
+              "start": "2022", 
+              "end": "2023" 
             },
             { 
               "project": "The Existing Company", 
               "summary": "Built and optimized a real estate mobile application for Fraser Property, improving property listing performance and enhancing user experience.", 
-              "start": "2022-01", 
-              "end": "2022-02" 
+              "start": "2022", 
+              "end": "2023" 
             },
             { 
               "project": "Tech Combine", 
               "summary": "Developed BullVPN iOS application with secure VPN integration, clean architecture, and optimized connection stability.", 
-              "start": "2021-01", 
-              "end": "2021-02" 
+              "start": "2021", 
+              "end": "2022" 
             },
             { 
               "project": "Onelink", 
               "summary": "Created a location-based employee check-in iOS application to track attendance and improve workforce management efficiency.", 
-              "start": "2019-01", 
-              "end": "2019-02" 
+              "start": "2019", 
+              "end": "2020" 
             },
             { 
               "project": "Thaicom", 
               "summary": "Developed LOOX TV streaming application and optimized MCOT Kid app performance for smoother playback and better user experience.",
-              "start": "2019-01", 
-              "end": "2019-02" 
+              "start": "2019", 
+              "end": "2020" 
             }            
           ],
           "tags": ["freelance", "ios", "mobile"]
