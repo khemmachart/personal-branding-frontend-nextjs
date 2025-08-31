@@ -8,6 +8,7 @@ import NextLink from 'next/link'
 import Image from 'next/image'
 import styled from 'styled-components'
 import { colors, spacing, borderRadius } from '@/components/design-system'
+import CTASection from './components/CTASection'
 
 type ItemT = {
   id?: string;

@@ -12,7 +12,7 @@ export const resumeData = {
         {
           "id": "profile-summary",
           "title": "Summary",
-          "summary": "Engineering leader with 9+ years’ experience delivering mobile and digital products to millions of users across startups and enterprises. Specialized in building high-performance, secure, and scalable systems while leading cross-functional teams to achieve measurable business outcomes. Expert in iOS, technical strategy, and agile delivery, with a proven ability to align technical execution to strategic goals.",
+          "summary": "Product Software Engineer and Consultant with 9+ years’ experience delivering mobile and digital products for startups and enterprises. Focused on building high-performance, secure, and scalable systems. Experienced in leading small engineering teams and collaborating with cross-functional teams to achieve business outcomes. Strong background in iOS, technical strategy, and agile delivery, with an ability to align technical execution to strategic goals.",
           "tags": ["summary"]
         }
       ]

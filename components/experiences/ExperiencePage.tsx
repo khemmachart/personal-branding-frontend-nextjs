@@ -182,7 +182,7 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
       
       <PageLayout>
         {/* Resume Section */}
-        <ResumeContainer>
+        <ResumeContainer id="content">
           
           <header id="home">
             {/* Hero Section */}
@@ -194,7 +194,6 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
             <H1>{profile?.title || "Khemmachart"}</H1>
             {profile?.summary && <Summary>{profile.summary}</Summary>}
           </header>
-
           {contactInfo.length > 0 && (
             <Section id="contact">
               <SectionTitle>Contact</SectionTitle>
@@ -221,7 +220,9 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
 
           {sections?.professional_experiences?.events?.length ? (
             <Section id="experience">
-              <SectionTitle>Experience</SectionTitle>
+              <SectionTitle>
+                Experience
+              </SectionTitle>
               <SectionContent>
                 {sections.professional_experiences.events.map((it: ItemT) => (
                   <ItemBlock key={it.id} it={it} />
@@ -232,7 +233,9 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
 
           {sections?.entrepreneurship?.events?.length ? (
             <Section id="entrepreneurship">
-              <SectionTitle>Entrepreneurship (Own Products)</SectionTitle>
+              <SectionTitle>
+                Entrepreneurship (Own Products)
+              </SectionTitle>
               <SectionContent>
                 {sections.entrepreneurship.events.map((it: ItemT) => (
                   <div key={it.id}>

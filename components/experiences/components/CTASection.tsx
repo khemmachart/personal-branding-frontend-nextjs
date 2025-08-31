@@ -34,9 +34,9 @@ const CTATitle = styled(H2)`
 
 const CTADescription = styled(Body)`
   color: ${colors.lightGray};
-  margin-bottom: ${spacing.xl};
   font-size: ${typography.fontSize.bodyLarge};
   max-width: 500px;
+  margin-bottom: ${spacing.xl};
   margin-left: auto;
   margin-right: auto;
 `
@@ -53,6 +53,7 @@ const CTAButton = styled.a`
   font-weight: ${typography.fontWeight.semiBold};
   transition: all ${transitions.normal};
   font-size: ${typography.fontSize.body};
+  margin: 10px;
   
   &:hover {
     background: #2563EB;
@@ -62,6 +63,107 @@ const CTAButton = styled.a`
 `
 
 const CTASection = () => {
+  // Print function for specific sections
+  const printSection = (sectionId: string, title: string) => {
+    const content = document.getElementById(sectionId);
+    if (!content) {
+      console.error(`Section with id "${sectionId}" not found`);
+      return;
+    }
+
+    const printWindow = window.open('', '_blank', 'width=800,height=900');
+    
+    if (!printWindow) {
+      console.error('Failed to open print window');
+      return;
+    }
+    
+    // Get current page styles
+    const currentStyles = Array.from(document.styleSheets)
+      .map(sheet => {
+        try {
+          return Array.from(sheet.cssRules)
+            .map(rule => rule.cssText)
+            .join('\n');
+        } catch (e) {
+          return '';
+        }
+      })
+      .filter(Boolean)
+      .join('\n');
+
+    printWindow.document.write(`
+      <html>
+        <head>
+          <title>${title}</title>
+          <style>
+            @page { 
+              size: A4; 
+              margin: 14mm; 
+            }
+            body { 
+              font-family: system-ui, sans-serif; 
+              font-size: 12pt; 
+              line-height: 1.5; 
+              margin: 0;
+              padding: 20px;
+            }
+            .no-print { 
+              display: none !important; 
+            }
+            .print-area * { 
+              break-inside: avoid; 
+            }
+            /* Custom styles for better print layout */
+            h1, h2, h3 { 
+              break-after: avoid; 
+              margin-top: 20px;
+              margin-bottom: 10px;
+            }
+            table { 
+              width: 100%; 
+              border-collapse: collapse; 
+              margin: 15px 0;
+            }
+            th, td { 
+              border: 1px solid #ddd; 
+              padding: 8px; 
+              text-align: left; 
+            }
+            th { 
+              background-color: #f5f5f5; 
+              font-weight: bold; 
+            }
+            img { 
+              max-width: 100%; 
+              height: auto; 
+            }
+            /* Hide navigation and unnecessary elements */
+            nav, .menu, .navbar, .header, .footer { 
+              display: none !important; 
+            }
+            ${currentStyles}
+          </style>
+        </head>
+        <body>
+          ${content.outerHTML}
+          <script>
+            window.onload = function() {
+              // Auto-print after content loads
+              setTimeout(() => {
+                window.print();
+                // Close window after printing (optional)
+                // window.close();
+              }, 500);
+            };
+          <\/script>
+        </body>
+      </html>
+    `);
+    
+    printWindow.document.close();
+  };
+
   return (
     <CTASectionContainer>
       <LandingContainer>
@@ -69,7 +171,10 @@ const CTASection = () => {
         <CTADescription>
           If you're interested in my work or need help with a project, I'd love to chat and collaborate.
         </CTADescription>
-        <CTAButton href="mailto:hello@khemmachart.dev">
+        <CTAButton onClick={() => printSection('content', 'Khemmachart - Experience & Skills')}>
+          🖨️ Print Resume
+        </CTAButton>
+        <CTAButton href="mailto:k.chutapetch+career@gmail.com">
           📧 Contact me
         </CTAButton>
       </LandingContainer>

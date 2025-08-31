@@ -8,6 +8,7 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { colors, spacing, typography, borderRadius } from '@/components/design-system'
 import NextLink from 'next/link'
+import CTASection from './components/CTASection'
 
 // Simple inline iframe component
 const SimpleIframe = ({ src, width, height, title, description }: any) => (
@@ -187,9 +188,10 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
   return (
     <PageLayout>
       <Baseline />
-      <Container>
+      <Container id="content">
         <Section id="intro">
           <SectionContent>
+            <H1>Entrepreneurship</H1>
             <Item>
               <div>
                 <Org>{(venture as any).org}</Org>
@@ -386,6 +388,9 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
           </Section>
         )}
       </Container>
+
+      {/* CTA Section */}
+      <CTASection />
 
       {/* Full-screen Image Modal */}
       {selectedImage && (
