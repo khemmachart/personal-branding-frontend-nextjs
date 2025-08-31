@@ -32,8 +32,8 @@ export const homePageMetadata: Metadata = {
     canonical: "https://khemmachart.dev",
   },
   other: {
-    'theme-color': '#FAF9F6',
-    'msapplication-TileColor': '#FAF9F6',
+    'theme-color': '#FFFFFF',
+    'msapplication-TileColor': '#FFFFFF',
   },
 }
 
