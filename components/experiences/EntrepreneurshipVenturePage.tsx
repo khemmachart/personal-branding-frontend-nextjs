@@ -8,6 +8,73 @@ import Image from 'next/image'
 import styled from 'styled-components'
 import { colors, spacing, typography, borderRadius } from '@/components/design-system'
 
+// Simple inline iframe component
+const SimpleIframe = ({ src, width, height, title, description }: any) => (
+  <div style={{ 
+    margin: '16px 0', 
+    borderRadius: '8px', 
+    overflow: 'hidden', 
+    boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.05)',
+    background: colors.ivoryWhite,
+    display: 'flex',
+    justifyContent: 'center' // Center the iframe
+  }}>
+    <div style={{ 
+      position: 'relative', 
+      width: parseInt(width) || 400, // Use original width
+      height: parseInt(height) || 300, // Use original height
+      maxWidth: '100%' // Prevent overflow on small screens
+    }}>
+      <iframe
+        src={src}
+        width={parseInt(width) || 400}
+        height={parseInt(height) || 300}
+        title={title || 'Embedded content'}
+        allowFullScreen={true}
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        scrolling="no"
+        frameBorder="0"
+        style={{
+          width: '100%',
+          height: '100%',
+          border: 'none'
+        }}
+      />
+    </div>
+    {(title || description) && (
+      <div style={{ 
+        padding: '16px', 
+        background: colors.ivoryWhite, 
+        borderTop: `1px solid ${colors.lightGray}`,
+        width: '100%' // Full width for caption
+      }}>
+        {title && <h4 style={{ margin: '0 0 8px 0', fontSize: '16px', fontWeight: 600, color: colors.darkGray }}>{title}</h4>}
+        {description && <p style={{ margin: 0, fontSize: '14px', color: colors.graphite, lineHeight: 1.5 }}>{description}</p>}
+        {src && (
+          <p style={{
+            margin: (title || description) ? '8px 0 0 0' : '0',
+            fontSize: '14px',
+            lineHeight: 1.5
+          }}>
+            <a
+              href={src}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: colors.accentBlue,
+                textDecoration: 'underline',
+                fontWeight: 500
+              }}
+            >
+              View original video
+            </a>
+          </p>
+        )}
+      </div>
+    )}
+  </div>
+)
+
 type ItemT = {
   id?: string;
   org?: string;
@@ -182,6 +249,21 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                       />
                     </ClickableImage>
                   )}
+                  {/* Support for iframes */}
+                  {Array.isArray(sec.iframes) && sec.iframes.length > 0 && (
+                    <div>
+                      {sec.iframes.map((iframe: any, iframeIndex: number) => (
+                        <SimpleIframe
+                          key={iframeIndex}
+                          src={iframe.src}
+                          width={iframe.width}
+                          height={iframe.height}
+                          title={iframe.title}
+                          description={iframe.description}
+                        />
+                      ))}
+                    </div>
+                  )}
                   {Array.isArray(sec.subtopics) && sec.subtopics.length > 0 && (
                     <div style={{ marginTop: 12 }}>
                       {sec.subtopics.map((sub: any, k: number) => (
@@ -236,6 +318,22 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                                     unoptimized
                                   />
                                 </ClickableImage>
+                              ))}
+                            </div>
+                          )}
+                          {/* Support for iframes in subtopics */}
+                          {Array.isArray(sub.iframes) && sub.iframes.length > 0 && (
+                            <div style={{ marginTop: 12 }}>
+                              {console.log('Found iframes in subtopic:', sub.title, sub.iframes)}
+                              {sub.iframes.map((iframe: any, iframeIndex: number) => (
+                                <SimpleIframe
+                                  key={iframeIndex}
+                                  src={iframe.src}
+                                  width={iframe.width}
+                                  height={iframe.height}
+                                  title={iframe.title}
+                                  description={iframe.description}
+                                />
                               ))}
                             </div>
                           )}

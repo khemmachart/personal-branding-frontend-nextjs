@@ -349,6 +349,24 @@ export const resumeData = {
                   }]
                 },
                 {
+                  "title": "AI-Search",
+                  "items": [
+                    "Developed an AI-Based chatbot for the booking platform, enabling users to find pool villas based on natural language queries and specific preferences.",
+                    // "Integrated vector embeddings and semantic search capabilities to understand user intent beyond keyword matching.",
+                    // "Implemented a custom ranking algorithm that combines relevance, availability, and user preferences for personalized results.",
+                    // "Utilized machine learning models to continuously improve search accuracy and user satisfaction based on booking data and feedback."
+                  ],
+                  "iframes": [{
+                    "src": "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1222465072304254%2F&show_text=false&width=439&t=0",
+                    "width": "439",
+                    "height": "300",
+                    "title": "AI-Based chatbot Search Demo Video",
+                    "description": "Facebook video demonstration of the AI-powered search functionality",
+                    "responsive": true,
+                    "allowFullScreen": true
+                  }]
+                },
+                {
                   "title": "LINE Notifications",
                   "items": [
                     "Integrated LINE Messaging API to enable automated push notifications for booking updates.",
@@ -361,19 +379,6 @@ export const resumeData = {
                     "alt": "LINE notifications dashboard"
                   }]
                 },
-                {
-                  "title": "AI-Search",
-                  "items": [
-                    "Developed an AI-Based chatbot for the booking platform, enabling users to find pool villas based on natural language queries and specific preferences.",
-                    // "Integrated vector embeddings and semantic search capabilities to understand user intent beyond keyword matching.",
-                    // "Implemented a custom ranking algorithm that combines relevance, availability, and user preferences for personalized results.",
-                    // "Utilized machine learning models to continuously improve search accuracy and user satisfaction based on booking data and feedback."
-                  ],
-                  "images": [{
-                    "src": "/images/entrepreneurship/ai-search.png",
-                    "alt": "AI-powered search interface"
-                  }]
-                }
               ]
             },
             {
