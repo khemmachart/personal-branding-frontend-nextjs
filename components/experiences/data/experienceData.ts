@@ -310,6 +310,7 @@ export const resumeData = {
           "links": {
             "website": "https://www.isarapoolvilla.com/",
             "booking": "https://www.isarapoolvilla.com/products/842/bookings/BKN-20250824115841-NMCD0P/orders/ORD-20250824115841-T5BSC7",
+            "services": "https://www.isarapoolvilla.com/services",
             "articles": "https://www.isarapoolvilla.com/blogs",
             "facebook": "https://www.facebook.com/IsaraPoolvillaTH/",
             "instagram": "https://www.instagram.com/isarapoolvilla/"
@@ -473,18 +474,19 @@ export const resumeData = {
           "start": "2024",
           "end": "present",
           "image": {
-            "src": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=60",
+            "src": "/images/entrepreneurship/refrai-flow.png",
             "alt": "AI concept and product interface"
           },
           "links": {
-            "website": "https://refr.example.com",
-            "demo": "https://refr.example.com/demo",
-            "deck": "https://assets.example.com/refr-deck.pdf",
-            "press": [
-              "https://news.example.com/refr-launch"
-            ],
-            "twitter": "https://twitter.com/refr_ai",
-            "services": "https://refr.example.com/services"
+            "website": "https://refrai.ap.ngrok.io",
+            // "demo": "https://refr.example.com/demo",
+            // "deck": "https://assets.example.com/refr-deck.pdf",
+            // "press": [
+            //   "https://news.example.com/refr-launch"
+            // ],
+            // "twitter": "https://twitter.com/refr_ai",
+            "services": "https://refrai.ap.ngrok.io/services",
+            "about": "https://refrai.ap.ngrok.io/about"
           },
           "summary": "Created an AI-driven content creation and distribution platform to help users generate high-quality, audience-specific content at scale.",
           "details": [
@@ -494,7 +496,32 @@ export const resumeData = {
             "[In-Progress] Implemented audience-specific research algorithms to tailor content strategy, improving engagement rates for early users by 40%.",
             "[In-Progress] Executed branding and marketing campaigns to drive initial user acquisition and platform awareness."
           ],
-          "tags": ["ai", "content", "founder", "automation", "marketing"]
+          "tags": ["ai", "content", "founder", "automation", "marketing"],
+          "detailSections": [
+            {
+              "title": "Product Development",
+              "items": [
+                "Conceived, designed, and developed the entire web platform as a solo engineer, covering frontend, backend, and system architecture.",
+                "Built a system capable of supporting up to 283 peak DAU and 5.2K MAU, ensuring stability during peak traffic.",
+                "Integrated LINE push notifications for real-time booking updates, enhancing customer experience and engagement.",
+                "Applied AI-driven development in both coding and content generation, accelerating delivery and improving platform capabilities.",
+              ],
+              "subtopics": [
+                {
+                  "title": "Architecture",
+                  "items": [
+                    "Monolithic architecture encompassing booking, payments, notifications, and content modules within a unified codebase.",
+                    "PostgreSQL primary database with Redis caching and rate limiting on critical endpoints to ensure stability and responsiveness.",
+                    "CDN for static assets and image optimization",
+                  ],
+                  "images": [{
+                    "src": "/images/entrepreneurship/refrai-system-architect.png",
+                    "alt": "System architecture diagram on screen"
+                  }]
+                },
+              ]
+            }
+          ]
         }
       ]
     },    

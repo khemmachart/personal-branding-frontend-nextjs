@@ -7,6 +7,7 @@ import { Container, H1, Section, SectionTitle, SectionContent, Item, Org, Role, 
 import Image from 'next/image'
 import styled from 'styled-components'
 import { colors, spacing, typography, borderRadius } from '@/components/design-system'
+import NextLink from 'next/link'
 
 // Simple inline iframe component
 const SimpleIframe = ({ src, width, height, title, description }: any) => (
@@ -201,6 +202,44 @@ export default function EntrepreneurshipVenturePage({ id }: { id: string }) {
                     <li key={i}>{d}</li>
                   ))}
                 </Bullets>
+              )}
+              {(venture as any).links && (
+                <LinksSection>
+                  {(venture as any).links.website && (
+                    <NextLink href={(venture as any).links.website} target="_blank" rel="noopener noreferrer">Website ↗</NextLink>
+                  )}
+                  {(venture as any).links.booking && (
+                    <NextLink href={(venture as any).links.booking} target="_blank" rel="noopener noreferrer">Booking ↗</NextLink>
+                  )}
+                  {(venture as any).links.demo && (
+                    <NextLink href={(venture as any).links.demo} target="_blank" rel="noopener noreferrer">Demo ↗</NextLink>
+                  )}
+                  {(venture as any).links.deck && (
+                    <NextLink href={(venture as any).links.deck} target="_blank" rel="noopener noreferrer">Deck ↗</NextLink>
+                  )}
+                  {(venture as any).links.articles && (
+                    <NextLink href={(venture as any).links.articles} target="_blank" rel="noopener noreferrer">Articles ↗</NextLink>
+                  )}
+                  {(venture as any).links.services && (
+                    <NextLink href={(venture as any).links.services} target="_blank" rel="noopener noreferrer">Services ↗</NextLink>
+                  )}
+                  {(venture as any).links.about && (
+                    <NextLink href={(venture as any).links.about} target="_blank" rel="noopener noreferrer">About ↗</NextLink>
+                  )}
+                </LinksSection>
+              )}
+              {(venture as any).links && ((venture as any).links.facebook || (venture as any).links.instagram || (venture as any).links.twitter) && (
+                <LinksSection>
+                  {(venture as any).links.facebook && (
+                    <NextLink href={(venture as any).links.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</NextLink>
+                  )}
+                  {(venture as any).links.instagram && (
+                    <NextLink href={(venture as any).links.instagram} target="_blank" rel="noopener noreferrer">Instagram ↗</NextLink>
+                  )}
+                  {(venture as any).links.twitter && (
+                    <NextLink href={(venture as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</NextLink>
+                  )}
+                </LinksSection>
               )}
             </Item>
             {(venture as any).image?.src && (

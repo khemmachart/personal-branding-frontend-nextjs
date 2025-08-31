@@ -65,6 +65,16 @@ function ItemBlockLite({ it }: { it: ItemT }) {
           {(it as any).links.articles && (
             <NextLink href={(it as any).links.articles} target="_blank" rel="noopener noreferrer">Articles ↗</NextLink>
           )}
+          {(it as any).links.services && (
+            <NextLink href={(it as any).links.services} target="_blank" rel="noopener noreferrer">Services ↗</NextLink>
+          )}
+          {(it as any).links.about && (
+            <NextLink href={(it as any).links.about} target="_blank" rel="noopener noreferrer">About ↗</NextLink>
+          )}
+        </LinksSection>
+      )}
+      {(it as any).links && (
+        <LinksSection>
           {(it as any).links.facebook && (
             <NextLink href={(it as any).links.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</NextLink>
           )}

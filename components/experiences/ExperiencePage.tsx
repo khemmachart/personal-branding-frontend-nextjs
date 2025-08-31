@@ -254,6 +254,16 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
                         {(it as any).links.articles && (
                           <Link href={(it as any).links.articles} target="_blank" rel="noopener noreferrer">Articles ↗</Link>
                         )}
+                        {(it as any).links.services && (
+                          <Link href={(it as any).links.services} target="_blank" rel="noopener noreferrer">Services ↗</Link>
+                        )}
+                        {(it as any).links.about && (
+                          <Link href={(it as any).links.about} target="_blank" rel="noopener noreferrer">About ↗</Link>
+                        )}
+                      </LinksSection>
+                    )}
+                    {(it as any).links && ((it as any).links.facebook || (it as any).links.instagram || (it as any).links.twitter) && (
+                      <LinksSection>
                         {(it as any).links.facebook && (
                           <Link href={(it as any).links.facebook} target="_blank" rel="noopener noreferrer">Facebook ↗</Link>
                         )}
@@ -262,9 +272,6 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
                         )}
                         {(it as any).links.twitter && (
                           <Link href={(it as any).links.twitter} target="_blank" rel="noopener noreferrer">Twitter ↗</Link>
-                        )}
-                        {(it as any).links.services && (
-                          <Link href={(it as any).links.services} target="_blank" rel="noopener noreferrer">Services ↗</Link>
                         )}
                       </LinksSection>
                     )}
