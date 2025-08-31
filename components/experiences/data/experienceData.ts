@@ -360,6 +360,19 @@ export const resumeData = {
                     "src": "/images/entrepreneurship/line-notifications.png",
                     "alt": "LINE notifications dashboard"
                   }]
+                },
+                {
+                  "title": "AI-Search",
+                  "items": [
+                    "Developed an AI-Based chatbot for the booking platform, enabling users to find pool villas based on natural language queries and specific preferences.",
+                    // "Integrated vector embeddings and semantic search capabilities to understand user intent beyond keyword matching.",
+                    // "Implemented a custom ranking algorithm that combines relevance, availability, and user preferences for personalized results.",
+                    // "Utilized machine learning models to continuously improve search accuracy and user satisfaction based on booking data and feedback."
+                  ],
+                  "images": [{
+                    "src": "/images/entrepreneurship/ai-search.png",
+                    "alt": "AI-powered search interface"
+                  }]
                 }
               ]
             },
@@ -374,10 +387,10 @@ export const resumeData = {
                 {
                   "title": "SEO & Content",
                   "items": [
-                    "Structured pages and metadata to support technical SEO (titles, meta tags, schema markup, internal linking).",
-                    "Built and maintained XML sitemaps to ensure comprehensive and accurate indexation.",
-                    "Researched and planned content strategy and keyword targeting (on-page SEO), aligning topics with business goals and user intent.",
-                    "Executed off-page SEO initiatives, including outreach and collaboration with external sites to strengthen domain authority.",
+                    "Technical: Structured pages and metadata to support technical SEO (titles, meta tags, schema markup, internal linking).",
+                    "Technical: Built and maintained XML sitemaps to ensure comprehensive and accurate indexation.",
+                    "On-Page: Researched and planned content strategy and keyword targeting (on-page SEO), aligning topics with business goals and user intent.",
+                    "Off-Page: Executed off-page SEO initiatives, including outreach and collaboration with external sites to strengthen domain authority.",
                   ],
                   "images": [
                     {
