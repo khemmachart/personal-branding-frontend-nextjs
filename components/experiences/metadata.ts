@@ -32,8 +32,8 @@ export const homePageMetadata: Metadata = {
     canonical: "https://khemmachart.dev",
   },
   other: {
-    'theme-color': '#3B82F6',
-    'msapplication-TileColor': '#3B82F6',
+    'theme-color': '#FAF9F6',
+    'msapplication-TileColor': '#FAF9F6',
   },
 }
 
@@ -69,7 +69,7 @@ export const experienceMetadata: Metadata = {
     canonical: "https://khemmachart.dev/experience",
   },
   other: {
-    'theme-color': '#3B82F6',
-    'msapplication-TileColor': '#3B82F6',
+    'theme-color': '#FAF9F6',
+    'msapplication-TileColor': '#FAF9F6',
   },
 }

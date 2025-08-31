@@ -181,16 +181,16 @@ export default function ResumePage({ data }: { data: ResumeDataT }) {
       <StructuredDataScript />
       
       <PageLayout>
-        {/* Hero Section */}
-        <HeroSection />
-
-        {/* Keywords Section */}
-        <KeywordsSection />
-
         {/* Resume Section */}
         <ResumeContainer>
-          <Baseline />
-          <header>
+          
+          <header id="home">
+            {/* Hero Section */}
+            <HeroSection />
+
+            {/* Keywords Section */}
+            <KeywordsSection />
+            <Baseline />
             <H1>{profile?.title || "Khemmachart"}</H1>
             {profile?.summary && <Summary>{profile.summary}</Summary>}
           </header>

@@ -55,10 +55,10 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Khemmachart Chutapetch",
-  "alternateName": ["Khem", "Khemmachart"],
+  "alternateName": ["Kao", "Khemmachart"],
   "description": "Developer, Designer & Creator with diverse interests in technology, lifestyle, photography, fashion, gaming, fitness, and music",
   "url": "https://khemmachart.dev",
-  "email": "hello@khemmachart.dev",
+  "email": "k.chutapetch+career@gmail.com",
   "nationality": "Thai",
   "knowsAbout": characters.map(char => ({
     "@type": "Thing",
